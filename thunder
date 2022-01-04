@@ -1,0 +1,3 @@
+#!/bin/bash
+
+su - adman -c ./home/adman/prgm/JuiceCamp/bin/FreeCAD
