@@ -1,3 +1,6 @@
 #!/bin/bash
 
-su - adman -c ./home/adman/prgm/JuiceCamp/bin/FreeCAD
+#su - adman -c ./home/adman/prgm/JuiceCamp/bin/FreeCAD
+su - adman -c ./prgm/FreeCAD_0.19.3-Linux-Conda_glibc2.12-x86_64.AppImage
+
+
