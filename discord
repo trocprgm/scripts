@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#firefox -new-tab -url https://outlook.office.com/mail/inbox/id/AAQkAGMxZDdjN2ZhLTFlMWYtNDJmMS04MTk5LWY2YmMzMDY5OWYyYgAQADU9FXdIwWlHp3xBsa8XHX0%3D -new-tab -url https://mail.google.com/mail/u/0/?ogbl#inbox -new-tab -url https://mail.google.com/mail/u/1/#inbox -new-tab -url https://app.slack.com/client/T02MVDQ9S5Q/C027HV4QFHU?selected_team_id=T02MVDQ9S5Q -new-tab -url https://mega.nz/fm/3Y8yADxA -new-tab -url https://discord.com/channels/@me -new-tab -url https://mail.protonmail.com/u/0/inbox
+
+chromium https://discord.com/channels/@me

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-firefox -new-tab -url https://csum.brightspace.com/d2l/home -new-tab -url https://www.csum.edu/intranet/

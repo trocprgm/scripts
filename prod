@@ -1,4 +1,5 @@
 #!/bin/bash
 
 
-firefox -new-tab -url https://habitica.com/ -new-tab -url https://pomofocus.io/ -new-tab -url https://calendar.google.com/calendar/u/0/r
+#firefox -new-tab -url https://habitica.com/ -new-tab -url https://pomofocus.io/ -new-tab -url https://calendar.google.com/calendar/u/0/r
+chromium --new-window https://smccd.instructure.com/?login_success=1 https://mail.google.com/mail/u/2/#inbox
