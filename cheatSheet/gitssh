@@ -1,0 +1,15 @@
+SSH
+
+set permisions of .ssh and its contents
+start ssh agent
+add keys to ssh-agent
+
+
+GIT
+
+MAKE SURE remote is set properly
+
+output of git remote -v
+
+origin git@github.com:trocprgm/repo.git (push) 
+origin git@github.com:trocprgm/repo.git (pull) 
