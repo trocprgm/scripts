@@ -27,7 +27,20 @@ Misc
 	tar tf /path
 	-see what will be installed
     pacman -Qlp /path
-    
+INSTALL
+=======
+
+makepkg -si
+patch < something.diff
+pacman -S something
+	-install from repo
+pacman -Q sonething 
+	-info about package on comp
+pacman -U something
+	-install from local
+pacman -Ss something
+	-seach repos
+
 FILESYSTEM
 ====
 ~/etc/pacman.conf

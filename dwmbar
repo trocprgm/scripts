@@ -1,6 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 while true; do
-	xsetroot -name "$( date )"
+	BATT=$(cat /sys/class/power_supply/BAT0/capacity) 
+	DATE=$(date) 
+	ROOT="$BATT $DATE" 
+	xsetroot -name "$ROOT"
 	sleep 1s
-done 
+done
