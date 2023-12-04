@@ -49,3 +49,5 @@ program config directory
 
 /usr/src/ or /usr/share/ (nat and claire respectively)
 home of the suckless programs + configs
+
+xdg-open is responcible for setting default programs
