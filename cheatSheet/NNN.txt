@@ -7,6 +7,9 @@
 		! ^]  exit with CD
 ^^^^^^^^^^^^^^^^^^^^^
 
+NNN_OPTS="A"
+disable annoying auto open files
+
  NAVIGATION
          Up k  Up                PgUp ^U  Page up
          Dn j  Down              PgDn ^D  Page down
@@ -29,7 +32,8 @@
  		
  		Esc then ^L to exit filter
  		
- 		Important: ^N toggles unpleasant automatic opening of files		
+        Option -A is used to prevent auto opening functionality
+        NNN_OPTS
  		  
  
             /  Filter                 ^N  Toggle type-to-nav
