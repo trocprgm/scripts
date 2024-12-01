@@ -1,0 +1,33 @@
+Keybindings
+Ctrl+t          Files/Folders in current directory, Enters Pastes into terminal
+Ctrl+r          search shell command history
+Ctrl+c          fuzzy change directory
+
+File names of working directory
+:Files {directory}
+
+Git Files
+:GFiles
+
+History of file names
+:History
+
+ctrl-x -v -t, open in new hirizontal, vertical, or tab
+
+Search through open buffers
+:Buffers
+
+Search through the context of all open buffer
+:Lines
+
+Search current buffer
+:BLines
+
+Search command history
+:History:
+
+Search through search history
+:History/
+
+Fullscreen
+append ! to command

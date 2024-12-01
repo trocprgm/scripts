@@ -1,0 +1,9 @@
+#!/bin/bash
+#setxkbmap -option grab:break_actions
+
+while true
+do
+    echo "test" &
+    xdotool key XF86Ungrab &
+    sleep 0.1 
+done

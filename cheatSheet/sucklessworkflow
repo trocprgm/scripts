@@ -5,7 +5,9 @@ EDITING CONFIG
 
 git pull configCat to verify latest version
 vv
-Make modifications to config.h
+Make modifications to config.def.h
+vv
+remove config.h
 vv
 make clean install
 vv

@@ -1,0 +1,17 @@
+check enviroment variables with
+printenv
+
+export VAR="myfuckingvar"
+
+root enviroment variables
+##########################
+apply to everyone
+persistant variables found in /etc/enviroment
+
+user enviroment variables
+##########################
+apply to current user
+persistant variables found in ~/.bashrc
+
+
+

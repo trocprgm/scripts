@@ -1,0 +1,11 @@
+Failed patches will create .rej files that describe the incomplete parts of the patch, and .orig file that contain the vigin files
+
+General Ussage:
+patch < thepatch.diff
+
+
+See how it would go
+patch --dry-run
+
+reverse (or atleast try)
+patch -R

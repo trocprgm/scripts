@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FILENAME="/home/adman/scripts/cheatSheet/$1.png"
+
+if [ -f "$FILENAME" ]; then
+    feh "$FILENAME"
+
+    # Perform other operations (e.g., count lines, words, etc.)
+#    echo "File statistics:"
+#    echo "Lines: $(wc -l < "$FILENAME")"
+#    echo "Words: $(wc -w < "$FILENAME")"
+#    echo "Characters: $(wc -c < "$FILENAME")"
+else
+    echo "File '$FILENAME' does not exist."
+    exit 1
+fi

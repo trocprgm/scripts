@@ -1,0 +1,19 @@
+#!/bin/bash
+ls /home/adman/scripts/cheatSheet/ > /home/adman/scripts/cheatSheet/show.txt
+FILENAME="/home/adman/scripts/cheatSheet/$1.txt"
+
+if [ -f "$FILENAME" ]; then
+    echo "File '$FILENAME' exists."
+    
+    # Display the file content (optional)
+    cat "$FILENAME"
+
+    # Perform other operations (e.g., count lines, words, etc.)
+#    echo "File statistics:"
+#    echo "Lines: $(wc -l < "$FILENAME")"
+#    echo "Words: $(wc -w < "$FILENAME")"
+#    echo "Characters: $(wc -c < "$FILENAME")"
+else
+    echo "File '$FILENAME' does not exist."
+    exit 1
+fi

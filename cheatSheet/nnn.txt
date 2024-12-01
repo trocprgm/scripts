@@ -1,12 +1,3 @@
-  |V\_
-  /. \\
- (;^; ||
-   /___3
-  (___n))
-
-		! ^]  exit with CD
-^^^^^^^^^^^^^^^^^^^^^
-
 NNN_OPTS="A"
 disable annoying auto open files
 
@@ -22,6 +13,7 @@ disable annoying auto open files
       2Esc ^Q  Quit                   ^y  Next young
            ^G  QuitCD                  Q  Pick/err, quit
             q  Quit context
+            ! Quit in context
 
  FILTER & PROMPT
  
@@ -31,19 +23,9 @@ disable annoying auto open files
  	or	Esc and normal h j k l
  		
  		Esc then ^L to exit filter
- 		
-        Option -A is used to prevent auto opening functionality
-        NNN_OPTS
- 		  
- 
             /  Filter                 ^N  Toggle type-to-nav
           Esc  Exit prompt            ^L  Toggle last filter
             .  Toggle hidden     Alt+Esc  Unfilter, quit context
-            
-            
-            
-            
-
 
  FILES
          o ^O  Open with               n  Create new/link
@@ -55,6 +37,7 @@ disable annoying auto open files
             a  Select all              A  Invert sel
          p ^P  Copy here            w ^W  Cp/mv sel as
          v ^V  Move here               E  Edit sel list
+         w ^W  prefered
          x ^X  Delete                  S  Listed sel size
           Esc  Send to FIFO
 
@@ -65,31 +48,3 @@ disable annoying auto open files
          t ^T  Sort toggles            s  Manage session
             T  Set time type           0  Lock
            ^L  Redraw                  ?  Help, conf
-
-LOCATIONS
- 1: /home/adman/Amy/arch
-
-VOLUME: avail:485.721G used:383.397G size:915.704G
-
-BOOKMARKS
- c: ~/.config
- n: ~/.config/nvim
- z: ~/.config/zsh
- a: ~/.config/awesome
- i: ~/img
- s: ~/dev
- d: ~/doc
- l: ~/.local/share
-
-PLUGIN KEYS
- f: browse_img_full
- i: browse_img
- o: open
- s: fuzzy
- c: _chmod 774 $nnn*
- e: exec
-
-NNN_COLORS: 2314
-NNN_FCOLORS: c1e2272e006033f7c6d6abc4
-NNN_ARCHIVE: \.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$
-NNN_TRASH: 1

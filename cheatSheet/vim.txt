@@ -1,0 +1,18 @@
+
+Find and Replace
+****************
+Line
+:s/
+
+File
+:%s/
+
+Visual Selection
+:'<,'>s/
+
+/g global
+
+/c confirm
+
+Join mutiple lines with J
+visual mode >> J *BAM*
