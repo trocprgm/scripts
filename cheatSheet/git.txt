@@ -1,0 +1,38 @@
+
+
+
+Setup
+****
+
+SSH
+
+set permisions of .ssh and its contents
+start ssh agent
+add keys to ssh-agent
+
+
+Step 1: make a repo on github
+
+Step 2: Go To Project Directory and run the following. Github provides setup code to. 
+git init
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:trocprgm/st.git
+git push -u origin main
+
+
+Double check:
+
+output of git remote -v
+
+origin git@github.com:trocprgm/repo.git (push) 
+origin git@github.com:trocprgm/repo.git (pull) 
+
+Workflow
+*********
+git status
+make modification
+git add .
+git commit -a
+git push
+

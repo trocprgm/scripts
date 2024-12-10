@@ -16,3 +16,8 @@ Visual Selection
 
 Join mutiple lines with J
 visual mode >> J *BAM*
+
+Multiline incremental numbering
+Visual block move
+select numbered list numbers (skip the #1)
+g ctrl a

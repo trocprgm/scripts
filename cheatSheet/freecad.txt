@@ -1,0 +1,16 @@
+STL to STEP
+###########
+part
+vvv
+create shape from mesh
+
+part
+vvv
+create copy
+vvv
+refine shape
+
+part
+vvv
+convert to solid
+###########

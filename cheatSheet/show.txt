@@ -6,9 +6,17 @@ basic.txt
 curl.txt
 enviromentvariables.txt
 feh.png
+ffmpeg.txt
 fzf.txt
+<<<<<<< HEAD
 git.txt
 gitssh
+=======
+git.png
+git.txt
+InstallNotes.txt
+mega.png
+>>>>>>> dcb45c764d46d19a62a4d33a9ffba349f4eff4bd
 mupdf.png
 nmcli.png
 nnn.txt
@@ -19,7 +27,7 @@ poker.png
 poker2.txt
 quant
 show.txt
-spice.jpg
+spice.png
 sucklessworkflow
 vim.png
 vim.txt
