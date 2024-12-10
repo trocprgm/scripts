@@ -3,8 +3,12 @@ curl.txt
 DWM.txt
 enviromentvariables.txt
 feh.png
+ffmpeg.txt
 fzf.txt
-gitssh
+git.png
+git.txt
+InstallNotes.txt
+mega.png
 mupdf.png
 nmcli.png
 nnn.txt
@@ -16,7 +20,7 @@ poker2.txt
 poker.png
 quant
 show.txt
-spice.jpg
+spice.png
 sucklessworkflow
 vim.png
 vim.txt

@@ -1,0 +1,1 @@
+fprintf("This float is %.2f. \n This string is %s",3.14, "string")
