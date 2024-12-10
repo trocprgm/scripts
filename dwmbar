@@ -2,7 +2,7 @@
 
 while true; do
     POWER=$(curl -s http://192.168.1.75/rpc/Shelly.GetStatus | jq '.["pm1:0"] .apower')
-	#BATT=$(cat /sys/class/power_supply/BAT0/capacity) 
+	BATT=$(cat /sys/class/power_supply/BAT0/capacity) 
 	DATE=$(date) 
 	ROOT="$POWER $DATE" 
 	xsetroot -name "$ROOT"

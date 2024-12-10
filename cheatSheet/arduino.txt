@@ -1,0 +1,15 @@
+arduino-cli core update-index
+
+check for any board
+arduino-cli board list
+
+check for supported board
+arduino-cli core list
+
+arduino-cli board listall
+
+arduino-cli board listall avr
+
+arduino-cli compile --fqbn arduino:samd:mkr1000 SomeSkectch
+
+arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:samd:mkr1000 SomeSketch
