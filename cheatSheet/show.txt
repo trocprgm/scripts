@@ -1,25 +1,32 @@
+DWM.txt
+InstallNotes.txt
+Panda.png
+arduino.txt
 basic.txt
 curl.txt
-DWM.txt
 enviromentvariables.txt
 feh.png
 ffmpeg.txt
 freecad.txt
 fzf.txt
+<<<<<<< HEAD
+git.txt
+gitssh
+=======
 git.png
 git.txt
 InstallNotes.txt
 matlab.txt
 mega.png
+>>>>>>> dcb45c764d46d19a62a4d33a9ffba349f4eff4bd
 mupdf.png
 nmcli.png
 nnn.txt
 pacman.txt
 pamix.png
-Panda.png
 patch.txt
-poker2.txt
 poker.png
+poker2.txt
 quant
 show.txt
 spice.png
