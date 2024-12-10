@@ -4,10 +4,12 @@ DWM.txt
 enviromentvariables.txt
 feh.png
 ffmpeg.txt
+freecad.txt
 fzf.txt
 git.png
 git.txt
 InstallNotes.txt
+matlab.txt
 mega.png
 mupdf.png
 nmcli.png
