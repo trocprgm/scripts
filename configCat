@@ -5,7 +5,7 @@ cp /home/$USER/.xinitrc /home/$USER/scripts/confSync/.xinitrc
 cp /home/$USER/.bashrc /home/$USER/scripts/confSync/.bashrc
 #cp /home/$USER/.bash_profile /home/$USER/scripts/confSync/bash_profile
 cp /home/$USER/.vimrc /home/$USER/scripts/confSync/.vimrc
-/home/rhom/.config/nvim/init.lua /home/rhom/scripts/confSync/init.lua
+# /home/$USER/.config/nvim/init.lua /home/$USER/scripts/confSync/init.lua
 #NNN enviroment variables mostly moved to /etc/enviroment. Only the pretty colors remain
 # cp /etc/environment /home/$USER/scripts/confSync/environment
 #/etc/enviroment is used so that NNN will be configured when using as root

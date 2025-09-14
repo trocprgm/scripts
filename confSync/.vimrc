@@ -1,0 +1,106 @@
+set nocompatible
+
+runtime! plugin/sensible.vim
+runtime! archlinux.vim
+
+set laststatus=1
+
+" ln -s /home/username/.vim /root/.vim
+" ln -s /home/username/.vimrc /root/.vimrc
+" create symbolic link in /root/ so sudo vim functions like regular vim
+" if you use /etc/vimrc then sensible will shit the bed
+
+"/usr/share/vim/vimefiles/archlinux.vim
+"regular defaults
+
+"~/.vim/plugged/vim-sensible/plugin/sensible.vim
+"defaults added by sensible
+
+
+call plug#begin()
+" List your plugins here
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+" Plug 'ycm-core/YouCompleteMe'
+Plug 'chrisbra/Colorizer'
+Plug 'vimwiki/vimwiki'
+call plug#end()
+
+let g:vimwiki_list = [
+  \ {'path': '~/MEGA/vimwiki/',     'syntax': 'default',  'ext': '.wiki'}
+\ ]
+
+function! LF()
+    let temp = tempname()
+    exec 'silent !lf -selection-path=' . shellescape(temp)
+    if !filereadable(temp)
+        redraw!
+        return
+    endif
+    let names = readfile(temp)
+    if empty(names)
+        redraw!
+        return
+    endif
+    exec 'edit ' . fnameescape(names[0])
+    for name in names[1:]
+        exec 'argadd ' . fnameescape(name)
+    endfor
+    redraw!
+endfunction
+command! -bar LF call LF()
+
+
+filetype plugin indent on
+
+let skip_defaults_vim=1
+set clipboard=unnamedplus
+filetype on
+
+let @o ='o€ý5k'
+"let @O ='O€ý5j'
+let @e ='oprintf("\x1B[€ý5'
+
+" inoremap lj <esc>
+" vnoremap lj <esc>
+" cnoremap lj <esc>
+" CTRL-Tab is next tab
+" noremap <C-Tab> :<C-U>tabnext<CR>
+" inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
+" cnoremap <C-Tab> <C-C>:tabnext<CR>
+" " CTRL-SHIFT-Tab is previous tab
+" noremap <C-S-Tab> :<C-U>tabprevious<CR>
+" inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
+" cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
+
+
+set laststatus=1
+
+"autocmd FileType * setlocal formatoptions-=o
+"set errorformat^=%-G%f:%l:\ warning:%m
+map <C-L> gt
+map <C-H> gT
+"Maps next and previos tab
+map <C-f> <C-e>
+map <C-b> <C-y>
+"Maps page up and page down to a kinda scroll
+
+set relativenumber
+set number
+set showmode
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set showmatch
+set hlsearch
+colo slate
+set cursorline
+set cursorcolumn
+set wrap
+set scrolloff=10
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+
