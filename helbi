@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FILENAME="/home/adman/scripts/cheatSheet/$1.png"
+FILENAME="/home/$USER/scripts/cheatSheet/$1.png"
 
 if [ -f "$FILENAME" ]; then
     feh "$FILENAME"

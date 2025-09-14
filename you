@@ -1,4 +1,0 @@
-#!/bin/bash
-
-#firefox -new-tab -url https://www.youtube.com/ -new-tab -url https://www.youtube.com/
-chromium --new-window www.youtube.com

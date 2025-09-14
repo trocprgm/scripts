@@ -1,5 +1,0 @@
-#!/bin/bash
-
-
-curlftpfs 192.168.1.21 ~/RoseFTP/ -o user=pi:snugglebristleriseextrudeurchinunsaidresilient
-

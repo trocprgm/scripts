@@ -1,8 +1,10 @@
+DWM.txt
+E&M.pdf
+InstallNotes.txt
+Panda.png
 arduino.txt
 basic.txt
 curl.txt
-DWM.txt
-E&M.pdf
 enviromentvariables.txt
 feh.png
 ffmpeg.txt
@@ -11,7 +13,6 @@ fzf.txt
 git.png
 git.txt
 groups.txt
-InstallNotes.txt
 iwctl.txt
 lf.txt
 list
@@ -22,11 +23,10 @@ nmcli.png
 nnn.txt
 pacman.txt
 pamix.png
-Panda.png
 patch.txt
+poker.png
 poker2.pdf
 poker2.txt
-poker.png
 quant
 show.txt
 spice.png
