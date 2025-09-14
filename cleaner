@@ -1,6 +1,0 @@
-#!/bin/bash
-
-mv /home/$USER/Amy/* /home/$USER/Downstale
-mv /home/$USER/MEGA/AMY/* /home/$USER/Downstale
-mv /home/$USER/.cache/vim/swap/* /home/$USER/Downstale/swap
-rmdir /home/$USER/Downloads
