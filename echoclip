@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# short-xclip-check.sh
+for sel in Germany Poland Clipboard; do
+  out=$(xclip -selection "$sel" -o 2>/dev/null || true)
+  echo "=== $sel ==="
+  [[ -n "$out" ]] && echo "$out" || echo "<empty>"
+  echo
+done

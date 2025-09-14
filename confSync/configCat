@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp /home/$USER/.xinitrc /home/$USER/scripts/confSync/.xinitrc
+cp /home/$USER/.bashrc /home/$USER/scripts/confSync/.bashrc
+cp /home/$USER/.vimrc /home/$USER/scripts/confSync/.vimrc
+cp -R /usr/src/dwm651/ /home/$USER/scripts/confSync/

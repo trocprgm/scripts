@@ -20,8 +20,12 @@ export PATH="/usr/NX/bin:$PATH"
 export PATH="$PATH:/home/$USER/.local/bin"
 #vvvv this shit is fire
 #System aliases
-alias getclip="xclip -selection c -o"
 alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
+alias setgermany="xclip -selection primary"
+alias getgermany="xclip -selection primary -o"
+alias setpoland="xclip -selection secondary"
+alias getpoland="xclip -selection secondary -o"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 #Navigation
 alias home="cd /home/$USER/"
@@ -34,6 +38,8 @@ alias bg="feh --bg-fill /home/adman/.config/background/.bg.png"
 alias weather="curl https://wttr.in/"
 alias vw="nvim +VimwikiIndex"
 alias map="chromium --new-window https://www.google.com/maps/"
+alias tv=". $HOME/.screenlayout/TV.sh"
+alias laptop=". $HOME/.screenlayout/default.sh"
 # vvv fucked
 #alias fzfcd="cd \"$(find . -type d | fzf)\""
 
