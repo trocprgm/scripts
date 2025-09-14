@@ -1,0 +1,6 @@
+device list
+station DEVICE scan
+station DEVICE get-networks
+station DEVICE connect SSID
+
+

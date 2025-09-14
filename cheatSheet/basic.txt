@@ -1,3 +1,15 @@
+PIPE & REDIRECT
+===============
+
+pipe - used to direct from one program to another
+ls | grep etc
+
+redirect - used to pass output to a file
+
+ls > list      -replaces file 
+
+ls >> list     -appends to file
+
 GREP
 ====
 cat txt.txt | grep -n "waterloo"

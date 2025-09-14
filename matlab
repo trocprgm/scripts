@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec /home/adman/prgm/MatLab/bin/matlab >/dev/null
+exec /home/$USER/prgm/MATLAB/R2024b/bin/matlab

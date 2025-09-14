@@ -1,0 +1,3 @@
+#!/bin/bash
+
+chromium https://smccd.instructure.com/?login_success=1

@@ -1,0 +1,8 @@
+"set fullscreen = yes
+set content = no
+
+map J zi
+map K zo
+
+"map / fh
+"map ? fw

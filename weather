@@ -1,5 +1,5 @@
 #!/bin/bash
 
-curl wttr.in
+curl https://wttr.in/
 
 read

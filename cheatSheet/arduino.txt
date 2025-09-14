@@ -1,15 +1,42 @@
-arduino-cli core update-index
+COMPILE AND UPLOAD
+##################
 
-check for any board
+list boards
 arduino-cli board list
 
-check for supported board
+compile
+arduino-cli compile --fqbn arduino:avr:uno Blink
+
+upload
+arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno Blink
+
+create compile/upload scripts
+echo "arduino-cli compile --fqbn arduino:avr:uno Blink" >> compile
+echo "arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno Blink" >> upload
+add #!/bin/bash and chmod +x 
+
+SERIAL MONITOR
+##############
+
+picocom -b 9600 /dev/ttyACM0
+
+UPDATE CORES
+############
+
+check for installed cores
 arduino-cli core list
 
-arduino-cli board listall
+update cores from arduino-cli.yaml config
+arduino-cli core update-index
 
-arduino-cli board listall avr
+install new core (after adding it to arduino-cli.yaml)
+arduino-cli core install esp32:esp32 
 
-arduino-cli compile --fqbn arduino:samd:mkr1000 SomeSkectch
+FIND FBQN
+#########
 
-arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:samd:mkr1000 SomeSketch
+arduino-cli board listall esp32
+arduino-cli board listall esp32cam
+                            etc...
+OR
+upload via IDE and read first line of console output for fbqn

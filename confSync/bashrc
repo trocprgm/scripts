@@ -1,0 +1,30 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+
+[[ $- != *i* ]] && return
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+export PATH="/home/$USER/scripts:$PATH"
+export PATH="/home/$USER/AppImage:$PATH"
+export PATH="/home/$USER/.screenlayout:$PATH"
+export HISTFILE=/home/$USER/.bash_trash/.bash_history
+export PATH="/usr/NX/bin:$PATH"
+export PATH="$PATH:/home/$USER/.local/bin"
+export _JAVA_AWT_WM_NONREPARENTING=1
+export AWT_TOOLKIT=MToolkit
+eval "$(fzf --bash)"
+
+export EDITOR=nvim
+
+#vvvv this shit is fire
+alias getclip="xclip -selection c -o"
+alias setclip="xclip -selection c"
+#vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+#ln -s /home/$USER/.bashrc /root/.bashrc
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#/etc/enviroment is used for global variables
+

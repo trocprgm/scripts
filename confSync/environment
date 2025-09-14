@@ -1,0 +1,11 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+# export NNN_BMS="A:/home/adman/Amy;p:/home/adman/prgm;s:/home/adman/School;D:/run/media/adman/;c:/home/adman/scripts;R:/;E:/etc;S:/usr/src"
+# NNN_OPTS='A'
+EDITOR=vim
