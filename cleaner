@@ -2,6 +2,7 @@
 
 mv /home/$USER/Amy/* /home/$USER/Downstale
 mv /home/$USER/MEGA/Amy/* /home/$USER/Downstale
+mv /home/$USER/MEGA/scans/* /home/$USER/MEGA/scans/archive
 mv /home/$USER/.cache/vim/swap/* /home/$USER/Downstale/swap
 mv /home/$USER/Downloads/* /home/$USER/Downstale
 rmdir /home/$USER/Downloads
