@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# KEEP IN THE SCRIPTS DIR
+# YOU DONT NEED TO PUT IT IN /scripts/dot
 cp /home/$USER/.xinitrc /home/$USER/scripts/dot/.xinitrc
 cp /home/$USER/.bashrc /home/$USER/scripts/dot/.bashrc
 cp /home/$USER/.vimrc /home/$USER/scripts/dot/.vimrc
