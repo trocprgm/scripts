@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cp /home/$USER/.xinitrc /home/$USER/scripts/dot/.xinitrc
+cp /home/$USER/.bashrc /home/$USER/scripts/dot/.bashrc
+cp /home/$USER/.vimrc /home/$USER/scripts/dot/.vimrc
+cp -R /usr/src/dwm651/ /home/$USER/scripts/dot/
+cp -R /usr/src/st/ /home/$USER/scripts/dot/

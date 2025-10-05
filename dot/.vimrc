@@ -102,5 +102,5 @@ set cursorcolumn
 set wrap
 set scrolloff=10
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-set title
-set titlestring=%F
+
+

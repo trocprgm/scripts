@@ -15,6 +15,7 @@ export AWT_TOOLKIT=MToolkit
 export EDITOR=nvim
 
 export PATH="/home/$USER/scripts:$PATH"
+export PATH="/home/$USER/Appimage:$PATH"
 export PATH="/home/$USER/.screenlayout:$PATH"
 export PATH="/usr/NX/bin:$PATH"
 export PATH="$PATH:/home/$USER/.local/bin"
@@ -29,9 +30,13 @@ alias getpoland="xclip -selection secondary -o"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 #Navigation
 alias home="cd /home/$USER/"
+alias prgm="cd /home/$USER/prgm"
+alias scripts="cd /home/$USER/scripts"
 alias suck="cd /usr/src"
 alias amy="cd /home/$USER/Amy"
 alias mega="cd /home/$USER/MEGA"
+alias megaamy="cd /home/$USER/MEGA/Amy"
+alias act="cd /home/$USER/scripts/dot"
 #Program shortcuts
 alias bottlez="flatpak run com.usebottles.bottles"
 alias bg="feh --bg-fill /home/adman/.config/background/.bg.png"
