@@ -3,4 +3,12 @@
 mv /home/$USER/Amy/* /home/$USER/Downstale
 mv /home/$USER/MEGA/Amy/* /home/$USER/Downstale
 mv /home/$USER/.cache/vim/swap/* /home/$USER/Downstale/swap
+mv /home/$USER/Downloads/* /home/$USER/Downstale
 rmdir /home/$USER/Downloads
+rmdir /home/$USER/Desktop
+rmdir /home/$USER/Documents
+rmdir /home/$USER/Music
+rmdir /home/$USER/Pictures
+rmdir /home/$USER/Public
+rmdir /home/$USER/Videos
+rmdir /home/$USER/Templates
