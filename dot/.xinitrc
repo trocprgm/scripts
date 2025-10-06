@@ -3,5 +3,6 @@
 feh --bg-fill /home/$USER/.config/bg2.png &
 megasync &
 nm-applet &
+mullvad-vpn &
 exec dwm
 

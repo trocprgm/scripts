@@ -125,7 +125,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = chromium } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("flameshot gui") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("st nnn") },
-	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("caja") },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("thunar") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
