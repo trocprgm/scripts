@@ -45,3 +45,10 @@ sudo pacman -S libx11
 in the exrtra repo
 
 Also made it so that that scratchpads can be possitioned
+
+Patching on 10-14-25
+added floatrules patch 
+wrote little if statement in dwm.c that only centers floating windows on the far left and doesnt interfer with windows defined by float ruels.
+Works pretty well
+did some other stuff
+

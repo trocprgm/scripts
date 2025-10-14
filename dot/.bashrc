@@ -31,6 +31,7 @@ alias getpoland="xclip -selection secondary -o"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 #Navigation
 alias home="cd /home/$USER/"
+alias config="cd /home/$USER/.config/"
 alias prgm="cd /home/$USER/prgm"
 alias scri="cd /home/$USER/scripts"
 alias suck="cd /usr/src"

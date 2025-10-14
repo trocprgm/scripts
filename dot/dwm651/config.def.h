@@ -35,18 +35,20 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "nnn", NULL };
-const char *spcmd3[] = {"keepassxc", NULL };
-const char *spcmd4[] = {"st", "-n", "calendar", "-g", "144x60", "calendar", NULL };
-const char *spcmd5[] = {"st", "-n", "weather", "-g", "144x41", "weather", NULL };
+const char *spcmd1[] = {"st", "-n", "Ypad", "-g", "120x60", NULL };
+const char *spcmd2[] = {"st", "-n", "Upad", "-g", "120x60", NULL };
+// const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "nnn", NULL };
+// const char *spcmd3[] = {"keepassxc", NULL };
+// const char *spcmd4[] = {"st", "-n", "calendar", "-g", "144x60", "calendar", NULL };
+// const char *spcmd5[] = {"st", "-n", "weather", "-g", "144x41", "weather", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
-	{"spterm",      spcmd1},
-	{"spranger",    spcmd2},
-	{"keepassxc",   spcmd3},
-	{"calendar",   spcmd4},
-	{"weather",   spcmd5},
+	{"Ypad",      spcmd1},
+	{"Upad",      spcmd2},
+	// {"spranger",    spcmd2},
+	// {"keepassxc",   spcmd3},
+	// {"calendar",   spcmd4},
+	// {"weather",   spcmd5},
 };
 
 
@@ -57,19 +59,19 @@ static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
+     *
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",         NULL,       NULL,       0,            1,           -1 },
-//	{ "Pavucontrol",  NULL,       NULL,       1 << 8,       0,           1 },
-//	{ "KeePassXC",    NULL,       NULL,       1 << 8,       0,           1 },
 	{ "Firefox",      NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "zoom",         NULL,       NULL,       0,            1,            2 },
 	{ "st-256color",  NULL,       "pamix",       1 << 8,       0,           1 },
-	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
-	{ NULL,		  "spfm",		NULL,		SPTAG(1),		1,			 -1 },
-	{ NULL,		  "keepassxc",	NULL,		SPTAG(2),		0,			 -1 },
-	{ NULL,		  "calendar",	NULL,		SPTAG(3),		1,			 -1 },
-	{ NULL,		  "weather",	NULL,		SPTAG(4),		1,			 -1 },
+ 	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
+ 	{ "MEGAsync",     NULL,       NULL,       0,            1,           -1,        1518,7,50,50,        -1 },
+ 	{ "Mullvad VPN",     NULL,       NULL,       0,            1,           -1,        1596,19,320,568,        -1 },
+	{ "Gimp",         NULL,       NULL,       0,            1,           -1,        -1,-1,-1,-1,        -1 },
+	{ "Master PDF Editor 5",         NULL,       "Set Destination",       0,            1,           -1,        -1,-1,-1,-1,        -1  },
+	{ "zoom",         NULL,       NULL,       0,            1,            2,        -1,-1,-1,-1,        -1  },
+	{ NULL,		  "Ypad",		NULL,		SPTAG(0),		1,			 -1,        982,121,-1,-1,        -1  },
+	{ NULL,		  "Upad",		NULL,		SPTAG(1),		1,			 -1,        -1,-1,-1,-1,        -1  },
 };
 
 /* layout(s) */
@@ -124,8 +126,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = chromium } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("flameshot gui") },
-	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("st nnn") },
-	{ MODKEY|ShiftMask,             XK_d,      spawn,          SHCMD("caja") },
+	// { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("st nnn") },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("thunar") },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -169,9 +171,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
 	// { MODKEY,            			XK_u,	   togglescratch,  {.ui = 1 } },
-	{ MODKEY,            			XK_x,	   togglescratch,  {.ui = 2 } },
+	// { MODKEY,            			XK_x,	   togglescratch,  {.ui = 2 } },
 	// { MODKEY,            			XK_c,	   togglescratch,  {.ui = 3 } },
-	{ MODKEY,            			XK_w,	   togglescratch,  {.ui = 4 } },
+	// { MODKEY,            			XK_w,	   togglescratch,  {.ui = 4 } },
 	{ MODKEY,                       XK_m,  viewnext,       {0} },
 	{ MODKEY,                       XK_n,   viewprev,       {0} },
 	{ MODKEY|ShiftMask,             XK_m,  tagtonext,      {0} },
