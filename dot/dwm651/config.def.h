@@ -37,6 +37,7 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = {"st", "-n", "Ypad", "-g", "120x60", NULL };
 const char *spcmd2[] = {"st", "-n", "Upad", "-g", "120x60", NULL };
+const char *spcmd3[] = {"x48", NULL };
 // const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "nnn", NULL };
 // const char *spcmd3[] = {"keepassxc", NULL };
 // const char *spcmd4[] = {"st", "-n", "calendar", "-g", "144x60", "calendar", NULL };
@@ -45,6 +46,7 @@ static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"Ypad",      spcmd1},
 	{"Upad",      spcmd2},
+	{"x48",      spcmd3},
 	// {"spranger",    spcmd2},
 	// {"keepassxc",   spcmd3},
 	// {"calendar",   spcmd4},
@@ -72,6 +74,7 @@ static const Rule rules[] = {
 	{ "zoom",         NULL,       NULL,       0,            1,            2,        -1,-1,-1,-1,        -1  },
 	{ NULL,		  "Ypad",		NULL,		SPTAG(0),		1,			 -1,        982,121,-1,-1,        -1  },
 	{ NULL,		  "Upad",		NULL,		SPTAG(1),		1,			 -1,        -1,-1,-1,-1,        -1  },
+	{ NULL,		  "x48",		NULL,		SPTAG(2),		1,			 -1,        1548,50,-1,-1,        -1  },
 };
 
 /* layout(s) */
@@ -167,10 +170,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
-	// { MODKEY,            			XK_u,	   togglescratch,  {.ui = 1 } },
+	{ 0,            			XF86XK_Calculator,	   togglescratch,  {.ui = 2 } },
 	// { MODKEY,            			XK_x,	   togglescratch,  {.ui = 2 } },
 	// { MODKEY,            			XK_c,	   togglescratch,  {.ui = 3 } },
 	// { MODKEY,            			XK_w,	   togglescratch,  {.ui = 4 } },

@@ -98,6 +98,7 @@ set showmatch
 set hlsearch
 colo slate
 set cursorline
+set ignorecase
 set cursorcolumn
 set wrap
 set scrolloff=10
