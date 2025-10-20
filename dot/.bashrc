@@ -13,6 +13,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
 
 export EDITOR=nvim
+export FILE_MANAGER=thunar
 # export DE_FILE_MANAGER=thunar
 
 export PATH="/home/$USER/scripts:$PATH"
@@ -42,17 +43,18 @@ alias act="cd /home/$USER/scripts/dot"
 alias thermo="cd /home/$USER/MEGA/davis/thermo/"
 alias fluids="cd /home/$USER/MEGA/davis/fluids/"
 alias mechmat="cd /home/$USER/MEGA/davis/mechmat/"
+alias bottle48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/"
 #Program shortcuts
 alias bottlez="flatpak run com.usebottles.bottles"
 alias bg="feh --bg-fill /home/adman/.config/background/.bg.png"
-alias weather="curl https://wttr.in/"
+# alias weather="curl https://wttr.in/"
 alias vw="nvim +VimwikiIndex"
 alias map="chromium --new-window https://www.google.com/maps/"
 alias tv=". $HOME/.screenlayout/TV.sh"
 alias laptop=". $HOME/.screenlayout/default.sh"
-alias caja="thunar &"
-# vvv fucked
-#alias fzfcd="cd \"$(find . -type d | fzf)\""
+alias light="xrandr --output eDP-1 --brightness"
+alias padoff="xinput disable 12"
+alias padon="xinput enable 12"
 
 cdf() {
   local dir

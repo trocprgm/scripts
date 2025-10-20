@@ -19,6 +19,8 @@ set laststatus=1
 
 call plug#begin()
 " List your plugins here
+Plug 'ptzz/lf.vim'
+Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
@@ -33,6 +35,7 @@ let g:vimwiki_list = [
   \ {'path': '~/MEGA/vimwiki/',     'syntax': 'default',  'ext': '.wiki'}
 \ ]
 
+"vvvv for gvim and vim
 function! LF()
     let temp = tempname()
     exec 'silent !lf -selection-path=' . shellescape(temp)
@@ -52,6 +55,8 @@ function! LF()
     redraw!
 endfunction
 command! -bar LF call LF()
+
+
 
 
 filetype plugin indent on

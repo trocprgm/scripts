@@ -1,0 +1,44 @@
+json=$(curl -s 'https://api.open-meteo.com/v1/forecast?latitude=38.5449&longitude=-121.7405&current_weather=true')
+
+temp=$(echo "$json" | jq -r '.current_weather.temperature')
+code=$(echo "$json" | jq -r '.current_weather.weathercode')
+
+# Map weather code to description
+case $code in
+  0)  desc="Clear sky" ;;
+  1)  desc="Mainly clear" ;;
+  2)  desc="Partly cloudy" ;;
+  3)  desc="Overcast" ;;
+  45) desc="Fog" ;;
+  48) desc="Depositing rime fog" ;;
+  51) desc="Light drizzle" ;;
+  53) desc="Moderate drizzle" ;;
+  55) desc="Dense drizzle" ;;
+  56) desc="Light freezing drizzle" ;;
+  57) desc="Dense freezing drizzle" ;;
+  61) desc="Slight rain" ;;
+  63) desc="Moderate rain" ;;
+  65) desc="Heavy rain" ;;
+  66) desc="Light freezing rain" ;;
+  67) desc="Heavy freezing rain" ;;
+  71) desc="Slight snow fall" ;;
+  73) desc="Moderate snow fall" ;;
+  75) desc="Heavy snow fall" ;;
+  77) desc="Snow grains" ;;
+  80) desc="Slight rain showers" ;;
+  81) desc="Moderate rain showers" ;;
+  82) desc="Violent rain showers" ;;
+  85) desc="Slight snow showers" ;;
+  86) desc="Heavy snow showers" ;;
+  95) desc="Thunderstorm" ;;
+  96) desc="Thunderstorm with slight hail" ;;
+  99) desc="Thunderstorm with heavy hail" ;;
+  *)  desc="Unknown" ;;
+esac
+
+# Optional: show Fahrenheit instead of Celsius
+tempF=$(awk "BEGIN {print ($temp * 9/5) + 32}")
+
+# Set the root window name for dwm/xsetroot
+# xsetroot -name "☁️ ${desc}, ${tempF}°F"
+echo "${desc}, ${tempF}°F"

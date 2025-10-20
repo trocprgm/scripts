@@ -1,6 +1,6 @@
 #!/bin/bash
 # ls /home/$USER/scripts/cheatSheet/ > /home/$USER/scripts/cheatSheet/show.txt
-FILENAME="/home/$USER/scripts/cheatSheet/$1.txt"
+FILENAME="/home/$USER/MEGA/vimwiki/$1.wiki"
 
 if [ -f "$FILENAME" ]; then
     echo "File '$FILENAME' exists."
