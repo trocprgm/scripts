@@ -1,19 +1,15 @@
 #!/bin/bash
-# ls /home/$USER/scripts/cheatSheet/ > /home/$USER/scripts/cheatSheet/show.txt
-FILENAME="/home/$USER/scripts/cheatSheet/$1.txt"
 
-if [ -f "$FILENAME" ]; then
+DIR="/home/$USER/MEGA/vimwiki"
+INPUT=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+
+# Find a file in the directory matching case-insensitively
+FILENAME=$(find "$DIR" -maxdepth 1 -type f -iname "${INPUT}.wiki" | head -n 1)
+
+if [ -n "$FILENAME" ]; then
     echo "File '$FILENAME' exists."
-    
-    # Display the file content (optional)
     bat "$FILENAME"
-
-    # Perform other operations (e.g., count lines, words, etc.)
-#    echo "File statistics:"
-#    echo "Lines: $(wc -l < "$FILENAME")"
-#    echo "Words: $(wc -w < "$FILENAME")"
-#    echo "Characters: $(wc -c < "$FILENAME")"
 else
-    echo "File '$FILENAME' does not exist."
+    echo "File '$DIR/$1.wiki' does not exist (case-insensitive search)."
     exit 1
 fi

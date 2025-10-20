@@ -15,6 +15,8 @@ export AWT_TOOLKIT=MToolkit
 export EDITOR=nvim
 export FILE_MANAGER=thunar
 export GTK_THEME=Adwaita-dark
+# export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
+# export FZF_DEFAULT_OPTS=
 # export GTK_THEME="adw-gtk3:dark"
 # export DE_FILE_MANAGER=thunar
 
@@ -55,18 +57,23 @@ alias vw="nvim +VimwikiIndex"
 alias map="chromium --new-window https://www.google.com/maps/"
 alias tv=". $HOME/.screenlayout/TV.sh"
 alias laptop=". $HOME/.screenlayout/default.sh"
+alias ins="sudo pacman -S"
 alias light="xrandr --output eDP-1 --brightness"
 alias padoff="xinput disable 12"
 alias padon="xinput enable 12"
 
 cdf() {
   local dir
-  dir=$(find "${1:-.}" -type d 2>/dev/null | fzf) || return
+  dir=$(fd -H --type d . '/' | fzf) || return
   cd "$dir" || return
 }
 
 #Makes fzf work?? yeah...
 eval "$(fzf --bash)"
+export FZF_DEFAULT_COMMAND="fd -H --type f"
+export FZF_ALT_C_COMMAND="fd -H --type d"
+export FZF_CTRL_T_COMMAND="fd -H --type f . '/'"
+# export FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}"fd --type d"
 
 #/etc/enviroment is used for global variables
 #

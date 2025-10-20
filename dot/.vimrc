@@ -29,6 +29,8 @@ Plug 'junegunn/fzf'
 " Plug 'ycm-core/YouCompleteMe'
 Plug 'chrisbra/Colorizer'
 Plug 'vimwiki/vimwiki'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 let g:vimwiki_list = [
@@ -65,22 +67,15 @@ let skip_defaults_vim=1
 set clipboard=unnamedplus
 filetype on
 
-let @o ='o€ý5k'
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+let @o ='o€ý5xxxk'
 "let @O ='O€ý5j'
 let @e ='oprintf("\x1B[€ý5'
-
-" inoremap lj <esc>
-" vnoremap lj <esc>
-" cnoremap lj <esc>
-" CTRL-Tab is next tab
-" noremap <C-Tab> :<C-U>tabnext<CR>
-" inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
-" cnoremap <C-Tab> <C-C>:tabnext<CR>
-" " CTRL-SHIFT-Tab is previous tab
-" noremap <C-S-Tab> :<C-U>tabprevious<CR>
-" inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
-" cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
-
 
 set laststatus=1
 
@@ -92,6 +87,18 @@ map <C-H> gT
 map <C-f> <C-e>
 map <C-b> <C-y>
 "Maps page up and page down to a kinda scroll
+
+
+nnoremap ? :nohlsearch<CR>
+"? clears the search field
+inoremap <C-_> <C-p>
+" Ctrl-/ behaves like Ctrl-P
+inoremap <C-p> <Esc>
+" Ctrl-P behaves like Escape
+nnoremap <C-_> <C-p>
+" Make Ctrl-/ act like Ctrl-P (previous command)
+nnoremap <C-p> <Nop>
+" makes ctrl-p do nothing in command mode
 
 set relativenumber
 set number
