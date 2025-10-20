@@ -14,6 +14,8 @@ export AWT_TOOLKIT=MToolkit
 
 export EDITOR=nvim
 export FILE_MANAGER=thunar
+export GTK_THEME=Adwaita-dark
+# export GTK_THEME="adw-gtk3:dark"
 # export DE_FILE_MANAGER=thunar
 
 export PATH="/home/$USER/scripts:$PATH"
@@ -21,6 +23,7 @@ export PATH="/home/$USER/Appimage:$PATH"
 export PATH="/home/$USER/.screenlayout:$PATH"
 export PATH="/usr/NX/bin:$PATH"
 export PATH="$PATH:/home/$USER/.local/bin"
+# export PATH="$PATH:/home/$USER/.local/share/applications"
 #vvvv this shit is fire
 #System aliases
 alias setclip="xclip -selection c"

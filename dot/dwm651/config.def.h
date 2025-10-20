@@ -75,6 +75,7 @@ static const Rule rules[] = {
 	{ NULL,		  "Ypad",		NULL,		SPTAG(0),		1,			 -1,        982,121,-1,-1,        -1  },
 	{ NULL,		  "Upad",		NULL,		SPTAG(1),		1,			 -1,        -1,-1,-1,-1,        -1  },
 	{ NULL,		  "x48",		NULL,		SPTAG(2),		1,			 -1,        1548,50,-1,-1,        -1  },
+	{ NULL,		  "HP Prime - realTERRY",		NULL,	 0,	      1,	   -1,        1548,50,330,732,        -1  },
 };
 
 /* layout(s) */
@@ -123,10 +124,10 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *chromium[] = { "chromium", NULL };
 
-
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("j4-dmenu-desktop") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = chromium } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("flameshot gui") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("thunar") },
