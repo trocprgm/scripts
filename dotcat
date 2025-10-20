@@ -4,6 +4,7 @@
 cp /home/$USER/.xinitrc /home/$USER/scripts/dot/.xinitrc
 cp /home/$USER/.bashrc /home/$USER/scripts/dot/.bashrc
 cp /home/$USER/.vimrc /home/$USER/scripts/dot/.vimrc
+cp /home/$USER/.config/nvim/init.lua /home/$USER/scripts/dot/init.lua
 cp /etc/lf/lfrc /home/$USER/scripts/dot/lfrc
 cp /home/rhom/.config/feh/keys /home/rhom/scripts/dot/keys
 

@@ -11,6 +11,9 @@ cp "/home/$USER/scripts/dot/.bashrc" "/home/$USER/.bashrc"
 
 if [ -e "/home/$USER/.vimrc" ]; then mv "/home/$USER/.vimrc" "/home/$USER/.OLDvimrc"; fi
 cp "/home/$USER/scripts/dot/.vimrc" "/home/$USER/.vimrc"
+cp /home/$USER/.config/nvim/init.lua /home/$USER/scripts/dot/init.lua
+if [ -e "/home/$USER/.config/nvim/init.lua" ]; then mv "/home/$USER/.config/nvim/init.lua" "/home/$USER/.config/nvim/OLDinit.lua"; fi
+cp "/home/$USER/scripts/dot/init.lua" "/home/$USER/.config/nvim/init.lua"
 
 if [ -e "/etc/lf/lfrc" ]; then sudo mv "/etc/lf/lfrc" "/etc/lf/OLDlfrc"; fi
 sudo cp "/home/$USER/scripts/dot/lfrc" "/etc/lf/lfrc"
