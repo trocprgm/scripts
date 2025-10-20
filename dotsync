@@ -1,0 +1,30 @@
+#!/bin/bash
+# REVERSED: Copies from /scripts/dot → source locations
+# Existing files are renamed with an OLD prefix instead of being overwritten
+
+# --- HOME CONFIGS ---
+if [ -e "/home/$USER/.xinitrc" ]; then mv "/home/$USER/.xinitrc" "/home/$USER/.OLDxinitrc"; fi
+cp "/home/$USER/scripts/dot/.xinitrc" "/home/$USER/.xinitrc"
+
+if [ -e "/home/$USER/.bashrc" ]; then mv "/home/$USER/.bashrc" "/home/$USER/.OLDbashrc"; fi
+cp "/home/$USER/scripts/dot/.bashrc" "/home/$USER/.bashrc"
+
+if [ -e "/home/$USER/.vimrc" ]; then mv "/home/$USER/.vimrc" "/home/$USER/.OLDvimrc"; fi
+cp "/home/$USER/scripts/dot/.vimrc" "/home/$USER/.vimrc"
+
+if [ -e "/etc/lf/lfrc" ]; then sudo mv "/etc/lf/lfrc" "/etc/lf/OLDlfrc"; fi
+sudo cp "/home/$USER/scripts/dot/lfrc" "/etc/lf/lfrc"
+
+if [ -e "/home/rhom/.config/feh/keys" ]; then mv "/home/rhom/.config/feh/keys" "/home/rhom/.config/feh/OLDkeys"; fi
+cp "/home/rhom/scripts/dot/keys" "/home/rhom/.config/feh/keys"
+
+# --- DWM / ST ---
+read -p "Copy Suckless files? [y/N] " confirm
+if [[ "$confirm" =~ ^[Yy]$ ]]; then
+    sudo mkdir -p /usr/src
+    if [ -d "/usr/src/dwm651" ]; then sudo mv "/usr/src/dwm651" "/usr/src/OLDdwm651"; fi
+    if [ -d "/usr/src/st" ]; then sudo mv "/usr/src/st" "/usr/src/OLDst"; fi
+    sudo cp -R "/home/$USER/scripts/dot/dwm651" "/usr/src/"
+    sudo cp -R "/home/$USER/scripts/dot/st" "/usr/src/"
+    echo "Copied DWM/ST source directories."
+fi
