@@ -13,6 +13,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export AWT_TOOLKIT=MToolkit
 
 export EDITOR=nvim
+export TERMINAL=st
 export FILE_MANAGER=thunar
 export XDG_CONFIG_DIRS="$HOME/.config/xfce4/xfconf/:$HOME/.config/gtk-3.0/"
 # export GTK_THEME=Adwaita-dark
@@ -51,6 +52,11 @@ alias thermo="cd /home/$USER/MEGA/davis/thermo/"
 alias fluids="cd /home/$USER/MEGA/davis/fluids/"
 alias mechmat="cd /home/$USER/MEGA/davis/mechmat/"
 alias bottle48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/"
+alias vimrc="nvim ~/.vimrc"
+alias vimbak="cd ~/.local/share/nvim"
+alias vimswap="cd ~/.local/state/nvim/swap"
+alias bashrc="nvim ~/.bashrc"
+alias c="exit"
 #Program shortcuts
 alias bottlez="flatpak run com.usebottles.bottles"
 alias bg="feh --bg-fill /home/adman/.config/background/.bg.png"

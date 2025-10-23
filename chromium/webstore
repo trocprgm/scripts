@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://chromewebstore.google.com/category/extensions?utm_source=ext_sidebar&hl=en-US"
+else
+  chromium --new-window " https://chromewebstore.google.com/category/extensions?utm_source=ext_sidebar&hl=en-US"
+fi

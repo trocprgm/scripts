@@ -1,3 +1,4 @@
+#!/bin/bash
 json=$(curl -s 'https://api.open-meteo.com/v1/forecast?latitude=38.5449&longitude=-121.7405&current_weather=true')
 
 temp=$(echo "$json" | jq -r '.current_weather.temperature')

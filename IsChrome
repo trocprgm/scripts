@@ -1,0 +1,14 @@
+#!/bin/bash
+# returns 0 if Chromium is focused, 1 otherwise
+
+wid="$(xdotool getactivewindow 2>/dev/null)" || exit 1
+wm_class="$(xprop -id "$wid" WM_CLASS 2>/dev/null)" || exit 1
+
+# WM_CLASS is typically: WM_CLASS(STRING) = "chromium", "Chromium"
+if echo "$wm_class" | grep -qiE '"chromium"|"Chromium"'; then
+  echo "Chromium is focused"
+  exit 0
+else
+  echo "Chromium is not focused"
+  exit 1
+fi

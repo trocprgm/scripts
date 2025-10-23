@@ -5,8 +5,9 @@ while true; do
 	BATT=$(cat /sys/class/power_supply/BAT0/capacity) 
 	DATE=$(date +"%A, M%m %B %d, %Y %I:%M %p") 
     WEATHER=$(weather)
+    VIMSWAP=$(ls ~/.local/state/nvim/swap | wc -l)
 	#ROOT="$POWER $BATT $DATE" 
-	ROOT="$WEATHER | $BATT% | $DATE" 
+	ROOT="Swap:$VIMSWAP | $WEATHER | $BATT% | $DATE" 
 	xsetroot -name "$ROOT"
-	sleep 15s
+	sleep 5s
 done

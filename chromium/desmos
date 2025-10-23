@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://www.desmos.com/calculator"
+else
+  chromium --new-window " https://www.desmos.com/calculator"
+fi

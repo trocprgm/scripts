@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://www.youtube.com/"
+else
+  chromium --new-window " https://www.youtube.com/"
+fi

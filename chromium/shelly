@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://control.shelly.cloud/#/home/devices/-1"
+else
+  chromium --new-window " https://control.shelly.cloud/#/home/devices/-1"
+fi

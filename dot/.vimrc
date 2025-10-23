@@ -31,6 +31,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'vimwiki/vimwiki'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'chrisbra/Recover.vim'
 call plug#end()
 
 let g:vimwiki_list = [
@@ -78,8 +79,17 @@ let @o ='o€ý5xxxk'
 "let @O ='O€ý5j'
 let @e ='oprintf("\x1B[€ý5'
 
-set laststatus=1
+" set noswapfile
 
+set backup                 " enable backup files
+set writebackup            " keep a backup while writing
+set backupdir=~/.local/share/nvim/backup
+set backupext=.bak         " use .bak extension
+
+set laststatus=1
+set undofile
+" set undodir=~/.vim/undodir " Or your preferred directory for undo files
+set undodir=~/.local/share/nvim/undo
 "autocmd FileType * setlocal formatoptions-=o
 "set errorformat^=%-G%f:%l:\ warning:%m
 map <C-L> gt

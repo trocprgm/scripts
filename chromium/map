@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://www.google.com/maps"
+else
+  chromium --new-window " https://www.google.com/maps"
+fi

@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://chatgpt.com/"
+else
+  chromium --new-window " https://chatgpt.com/"
+fi
