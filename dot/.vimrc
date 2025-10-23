@@ -34,7 +34,7 @@ Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 let g:vimwiki_list = [
-  \ {'path': '~/MEGA/vimwiki/',     'syntax': 'default',  'ext': '.wiki'}
+  \ {'path': '~/MEGA/vimwiki/', 'syntax': 'default',  'ext': '.wiki', 'diary_frequency': 'weekly'}
 \ ]
 
 "vvvv for gvim and vim
@@ -63,6 +63,7 @@ command! -bar LF call LF()
 
 filetype plugin indent on
 
+" let g:vimwiki_diary_frequency = 'weekly'
 let skip_defaults_vim=1
 set clipboard=unnamedplus
 filetype on

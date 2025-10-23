@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://messages.google.com/web/conversations"
+else
+  chromium --new-window " https://messages.google.com/web/conversations"
+fi

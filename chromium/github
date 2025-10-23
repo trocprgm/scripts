@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://github.com/trocprgm"
+else
+  chromium --new-window " https://github.com/trocprgm"
+fi

@@ -1,0 +1,29 @@
+#!/bin/bash
+
+INPUT_CSV="/home/$USER/scripts/bookmarks.csv"
+OUTPUT_DIR="/home/$USER/scripts/chromium/"
+
+# Read CSV line by line (skip empty or malformed lines)
+rm /home/$USER/scripts/chromium/*
+
+while IFS=',' read -r NAME URL; do
+    # Skip headers or invalid lines
+    [[ -z "$NAME" || -z "$URL" || "$NAME" == "name" ]] && continue
+
+    # Sanitize filename
+    SCRIPT_NAME="$(echo "$NAME" | tr -cd '[:alnum:]_-')"
+    SCRIPT_PATH="$OUTPUT_DIR/$SCRIPT_NAME"
+
+    # Create the script file
+    cat > "$SCRIPT_PATH" <<EOF
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab "$URL"
+else
+  chromium --new-window "$URL"
+fi
+EOF
+
+    chmod +x "$SCRIPT_PATH"
+    echo "Created: $SCRIPT_PATH"
+done < "$INPUT_CSV"

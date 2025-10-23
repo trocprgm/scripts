@@ -14,13 +14,15 @@ export AWT_TOOLKIT=MToolkit
 
 export EDITOR=nvim
 export FILE_MANAGER=thunar
-export GTK_THEME=Adwaita-dark
+export XDG_CONFIG_DIRS="$HOME/.config/xfce4/xfconf/:$HOME/.config/gtk-3.0/"
+# export GTK_THEME=Adwaita-dark
 # export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
 # export FZF_DEFAULT_OPTS=
 # export GTK_THEME="adw-gtk3:dark"
 # export DE_FILE_MANAGER=thunar
 
 export PATH="/home/$USER/scripts:$PATH"
+export PATH="/home/$USER/scripts/chromium:$PATH"
 export PATH="/home/$USER/Appimage:$PATH"
 export PATH="/home/$USER/.screenlayout:$PATH"
 export PATH="/usr/NX/bin:$PATH"

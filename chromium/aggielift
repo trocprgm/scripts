@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://aggielife.ucdavis.edu/web_app?id=24764&menu_id=60940&if=0&"
+else
+  chromium --new-window " https://aggielife.ucdavis.edu/web_app?id=24764&menu_id=60940&if=0&"
+fi

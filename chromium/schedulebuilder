@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://my.ucdavis.edu/schedulebuilder/index.cfm?termCode=202510&helpTour="
+else
+  chromium --new-window " https://my.ucdavis.edu/schedulebuilder/index.cfm?termCode=202510&helpTour="
+fi
