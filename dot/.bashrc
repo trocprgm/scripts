@@ -69,6 +69,7 @@ alias ins="sudo pacman -S"
 alias light="xrandr --output eDP-1 --brightness"
 alias padoff="xinput disable 12"
 alias padon="xinput enable 12"
+alias powerstatus="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 
 cdf() {
   local dir
