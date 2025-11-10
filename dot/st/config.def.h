@@ -101,7 +101,8 @@ static const char *colorname[] = {
   /* 8 normal colors */
   [0] = "#282a2e", /* black   */
   [1] = "#a54242", /* red     */
-  [2] = "#8c9440", /* green   */
+  // [2] = "#8c9440", /* green   */
+  [2] = "#00FF00", /* green   */
   [3] = "#de935f", /* yellow  */
   [4] = "#5f819d", /* blue    */
   [5] = "#85678f", /* magenta */
@@ -200,17 +201,22 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
+	// { TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
+	// { TERMMOD,              XK_Next,        zoom,           {.f = -1} },
+	{ ShiftMask,              XK_F1,       zoom,           {.f = +1} },
+	{ ShiftMask,              XK_F2,       zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
-	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
-	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
+	// { TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
+	{ 0,            XK_Insert,      clippaste,       {.i =  0} },
+	{ ControlMask,              XK_space,           clipcopy,       {.i =  0} },
+	{ ControlMask|Mod1Mask,              XK_space,           clippaste,       {.i =  0} },
+	{ TERMMOD,              XK_Y,           clipcopy,       {.i =  0} },
+	{ TERMMOD,              XK_P,           clippaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_Return,      newterm,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ 0,            XK_F2,     kscrollup,      {.i = -1} },
+	{ 0,            XK_F1,   kscrolldown,    {.i = -1} },
 };
 
 /*

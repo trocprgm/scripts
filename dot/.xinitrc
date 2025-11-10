@@ -52,6 +52,9 @@ fi
 ./.screenlayout/default.sh &
 ./scripts/dwmbar &
 feh --bg-fill /home/$USER/.config/bg2.png &
+# setxkbmap -option 'caps:ctrl_modifier' &
+xremap --watch /home/$USER/.xremap.yml $
+numlockx &
 megasync &
 nm-applet &
 mullvad-vpn &

@@ -1,0 +1,21 @@
+modmap:
+  - name: Global
+    remap:
+      CapsLock: Ctrl_L
+keymap:
+  - name: Global 
+    exact_match: true
+    remap:
+      "Ctrl-j": PageDown
+      "Ctrl-k": PageUp
+      "Ctrl-h": "Ctrl-Shift-Tab"
+      "Ctrl-l": "Ctrl-Tab"
+      "Alt-s": PageDown
+      "Alt-w": PageUp
+      "Alt-a": "Ctrl-Shift-Tab"
+      "Alt-d": "Ctrl-Tab"
+      # "Win-a": "Ctrl-Shift-PageUp"
+      # "Win-d": "Shift-PageUp"
+      # "S-e": PageUp 
+      # "Ctrl-Shift-Alt-s": "Ctrl-Shift-PageUp"
+      # "Ctrl-Shift-Alt-w": "Ctrl-Shift-PageDown"

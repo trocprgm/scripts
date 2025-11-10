@@ -1,14 +1,16 @@
 #!/bin/bash
 # KEEP IN THE SCRIPTS DIR
 # YOU DONT NEED TO PUT IT IN /scripts/dot
-cp /home/$USER/.xinitrc /home/$USER/scripts/dot/.xinitrc
-cp /home/$USER/.bashrc /home/$USER/scripts/dot/.bashrc
-cp /home/$USER/.vimrc /home/$USER/scripts/dot/.vimrc
-cp /home/$USER/.config/nvim/init.lua /home/$USER/scripts/dot/init.lua
-cp /etc/lf/lfrc /home/$USER/scripts/dot/lfrc
-cp /home/rhom/.config/feh/keys /home/rhom/scripts/dot/keys
+scri="/home/$USER/scripts/dot"
+cp /home/$USER/.xinitrc $scri/.xinitrc
+cp /home/$USER/.bashrc $scri/.bashrc
+cp /home/$USER/.vimrc $scri/.vimrc
+cp /home/$USER/.config/nvim/init.lua $scri/init.lua
+cp /etc/lf/lfrc $scri/lfrc
+cp /home/$USER/.config/feh/keys $scri/keys
+cp /home/$USER/.xremap.yml $scri/.xremap.yml
 
 #DWM
 read -p "Copy Suckless files?"
-cp -R /usr/src/dwm651/ /home/$USER/scripts/dot/
-cp -R /usr/src/st/ /home/$USER/scripts/dot/
+cp -R /usr/src/dwm651/ $scri/
+cp -R /usr/src/st/ $scri/

@@ -92,11 +92,15 @@ set undofile
 set undodir=~/.local/share/nvim/undo
 "autocmd FileType * setlocal formatoptions-=o
 "set errorformat^=%-G%f:%l:\ warning:%m
-map <C-L> gt
-map <C-H> gT
+" map <C-L> gt
+" map <C-H> gT
+map <C-S-Tab> :tabprevious<CR>
+map <C-Tab> :tabnext<CR>
 "Maps next and previos tab
-map <C-f> <C-e>
-map <C-b> <C-y>
+" map <C-j> <C-d>
+" map <C-k> <C-u>
+map <PageDown> <C-d>
+map <PageUp> <C-u>
 "Maps page up and page down to a kinda scroll
 
 
