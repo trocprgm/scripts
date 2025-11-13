@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# thunar-fzf-launch: open thunar-fzf in a terminal
+set -euo pipefail
+
+# Defaults; override with env if you like
+start_dir="${1:-$PWD}"
+mode="${2:-any}"
+
+launch () {
+  # Prefer user’s $TERMINAL if it supports -e/command; else try common ones
+  if command -v "$TERMINAL" >/dev/null 2>&1; then
+    "$TERMINAL" -e bash -lc "thunar-fzf \"$start_dir\" \"$mode\"" & disown; exit 0
+  fi
+  for t in kitty alacritty xfce4-terminal gnome-terminal konsole footclient urxvt xterm; do
+    if command -v "$t" >/dev/null 2>&1; then
+      case "$t" in
+        kitty)            kitty bash -lc "thunar-fzf \"$start_dir\" \"$mode\"" & disown; exit 0 ;;
+        alacritty)        alacritty -e bash -lc "thunar-fzf \"$start_dir\" \"$mode\"" & disown; exit 0 ;;
+        xfce4-terminal)   xfce4-terminal -e "bash -lc 'thunar-fzf \"$start_dir\" \"$mode\"'" & disown; exit 0 ;;
+        gnome-terminal)   gnome-terminal -- bash -lc "thunar-fzf \"$start_dir\" \"$mode\"" & disown; exit 0 ;;
+        konsole)          konsole -e bash -lc "thunar-fzf \"$start_dir\" \"$mode\"" & disown; exit 0 ;;
+        footclient)       footclient bash -lc "thunar-fzf \"$start_dir\" \"$mode\"" & disown; exit 0 ;;
+        urxvt)            urxvt -e bash -lc "thunar-fzf \"$start_dir\" \"$mode\"" & disown; exit 0 ;;
+        xterm)            xterm -e bash -lc "thunar-fzf \"$start_dir\" \"$mode\"" & disown; exit 0 ;;
+      esac
+    fi
+  done
+  echo "No supported terminal found. Set \$TERMINAL or install kitty/alacritty/xfce4-terminal/etc." >&2
+  exit 1
+}
+
+launch

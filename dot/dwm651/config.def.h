@@ -46,8 +46,8 @@ const char *spcmd4[] = {"okular", "--name", "OkPad"};
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"Ypad",      spcmd1},
-	{"Upad",      spcmd2},
-	{"x48",      spcmd3},
+	{"Upad",      NULL},
+	{"x48",      NULL},
     {"OkPad",     spcmd4},
 	// {"spranger",    spcmd2},
 	// {"keepassxc",   spcmd3},
@@ -57,7 +57,7 @@ static Sp scratchpads[] = {
 
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -75,10 +75,10 @@ static const Rule rules[] = {
 	{ "Master PDF Editor 5",         NULL,       "Set Destination",       0,            1,           -1,        -1,-1,-1,-1,        -1  },
 	{ "zoom",         NULL,       NULL,       0,            1,            2,        -1,-1,-1,-1,        -1  },
 	{ NULL,		  "Ypad",		NULL,		SPTAG(0),		1,			 -1,        982,121,-1,-1,        -1  },
-	{ NULL,		  "Upad",		NULL,		SPTAG(1),		1,			 -1,        -1,-1,-1,-1,        -1  },
+	// { NULL,		  "Upad",		NULL,		SPTAG(1),		1,			 -1,        -1,-1,-1,-1,        -1  },
 	{ NULL,		  "x48",		NULL,		SPTAG(2),		1,			 -1,        1548,50,-1,-1,        -1  },
 	{ NULL,		  "OkPad",		NULL,		SPTAG(3),		1,			 -1,        -1,-1,-1,-1,        -1  },
-	{ NULL,		  "HP Prime - realTERRY",		NULL,	 0,	      1,	   -1,        1548,50,330,732,        -1  },
+	{ NULL,		  "steam_proton",         NULL,	    SPTAG(2),	      1,	   -1,        1548,50,330,732,        -1  },
 };
 
 /* layout(s) */
@@ -132,6 +132,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("j4-dmenu-desktop") },
+	{ MODKEY|ControlMask,             XK_p,      spawn,          SHCMD("clipmenu") },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = chromium } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("flameshot gui") },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("thunar") },
@@ -178,10 +179,12 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
     { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
     { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
-	{ MODKEY,            			XK_u,  	   togglescratch,  {.ui = 3 } },
+	{ MODKEY,            			XK_u,  	   togglescratch,  {.ui = 0 } },
+	// { MODKEY,            			XK_u  	   togglescratch,  {.ui = 3 } },
 	// { 0,            			XF86XK_Calculator,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY,            			XK_equal,	   togglescratch,  {.ui = 2 } },
+	{ MODKEY,            			XK_minus,	   togglescratch,  {.ui = 1 } },
+    { MODKEY|ShiftMask,             XK_minus,       tag,           {.ui = 1 } }, 
 	// { MODKEY,            			XK_x,	   togglescratch,  {.ui = 2 } },
 	// { MODKEY,            			XK_c,	   togglescratch,  {.ui = 3 } },
 	// { MODKEY,            			XK_w,	   togglescratch,  {.ui = 4 } },
@@ -198,10 +201,14 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+	// TAGKEYS(                        XK_minus,                      9)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ 0,                       XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
 	{ 0,                       XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+    // { MODKEY,                       XK_minus, scratchpad_show, {0} },
+    // { MODKEY|ShiftMask,             XK_minus, scratchpad_hide, {0} },
+    // { MODKEY,                       XK_equal,scratchpad_remove,{0} },
 
 };
 

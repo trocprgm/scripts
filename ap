@@ -1,0 +1,6 @@
+#!/bin/bash
+# shopt -s expand_aliases
+# source ~/.bashrc
+PATHWAY="$(cat /home/rhom/.bashrc | grep alias | sed 's/=/ =/g'| grep " $1 " | awk '{split($0, arr, "="); print arr[2]}' | sed 's/cd //g' | sed "s/\"//g" | sed 's/$USER/rhom/g')"
+echo $PATHWAY
+# echo $(alias)

@@ -14,8 +14,10 @@ export AWT_TOOLKIT=MToolkit
 
 export EDITOR=nvim
 export TERMINAL=st
-export FILE_MANAGER=thunar
+export CM_LAUNCHER=dmenu
+# export FILE_MANAGER=thunar
 export XDG_CONFIG_DIRS="$HOME/.config/xfce4/xfconf/:$HOME/.config/gtk-3.0/"
+export XDG_CONFIG_HOME="/home/rhom/.config/"
 # export GTK_THEME=Adwaita-dark
 # export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
 # export FZF_DEFAULT_OPTS=
@@ -31,8 +33,8 @@ export PATH="$PATH:/home/$USER/.local/bin"
 # export PATH="$PATH:/home/$USER/.local/share/applications"
 #vvvv this shit is fire
 #System aliases
-alias setclip="xclip -selection c"
-alias getclip="xclip -selection c -o"
+alias sc="xclip -selection c"
+alias gc="xclip -selection c -o"
 alias setgermany="xclip -selection primary"
 alias getgermany="xclip -selection primary -o"
 alias setpoland="xclip -selection secondary"
@@ -51,12 +53,14 @@ alias act="cd /home/$USER/scripts/dot"
 alias thermo="cd /home/$USER/MEGA/davis/thermo/"
 alias fluids="cd /home/$USER/MEGA/davis/fluids/"
 alias mechmat="cd /home/$USER/MEGA/davis/mechmat/"
-alias bottle48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/"
+alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/"
 alias vimrc="nvim ~/.vimrc"
 alias vimbak="cd ~/.local/share/nvim"
 alias vimswap="cd ~/.local/state/nvim/swap"
 alias bashrc="nvim ~/.bashrc"
 alias mks="sudo make clean install"
+alias sus="sudo su"
+alias sckon="sudo rm config.h && sudo nvim config.def.h"
 alias c="exit"
 alias xmap="xremap --watch ~/.xremap.yml"
 alias xmaprc="nvim /home/$USER/.xremap.yml"
@@ -65,6 +69,7 @@ alias bottlez="flatpak run com.usebottles.bottles"
 alias bg="feh --bg-fill /home/adman/.config/background/.bg.png"
 # alias weather="curl https://wttr.in/"
 alias vw="nvim +VimwikiIndex"
+alias vd="nvim -c VimwikiMakeDiaryNote"
 alias map="chromium --new-window https://www.google.com/maps/"
 alias tv=". $HOME/.screenlayout/TV.sh"
 alias laptop=". $HOME/.screenlayout/default.sh"
@@ -87,9 +92,9 @@ export FZF_DEFAULT_COMMAND="fd -H --type f"
 export FZF_ALT_C_COMMAND="fd -H --type d"
 export FZF_CTRL_T_COMMAND="fd -H --type f . '/'"
 # export FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}"fd --type d"
-
 #/etc/enviroment is used for global variables
-#
+export PROMPT_COMMAND="history -a"
+[[ -s /home/rhom/.autojump/etc/profile.d/autojump.sh ]] && source /home/rhom/.autojump/etc/profile.d/autojump.sh
 #Symbolic link is better for root user config
 #vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 #ln -s /home/$USER/.bashrc /root/.bashrc

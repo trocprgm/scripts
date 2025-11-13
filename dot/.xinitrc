@@ -53,7 +53,8 @@ fi
 ./scripts/dwmbar &
 feh --bg-fill /home/$USER/.config/bg2.png &
 # setxkbmap -option 'caps:ctrl_modifier' &
-xremap --watch /home/$USER/.xremap.yml $
+xremap --watch /home/$USER/.xremap.yml &
+clipmenud &
 numlockx &
 megasync &
 nm-applet &

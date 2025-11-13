@@ -93,7 +93,35 @@ cmd extract ${{
         *.7z) 7z x $f;;
     esac
 }}
-
+cmd fzf_jump ${{
+    res="$(find . -maxdepth 1 | fzf --reverse --header="Jump to location")"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        lf -remote "send $id $cmd \"$res\""
+    fi
+}}
+cmd aj %lf -remote "send $id cd \"$(aj "$1" | sed 's/\\/\\\\/g;s/"/\\"/g')\""
+map <c-f> :fzf_jump
+cmd alias_jump ${{
+    #res="$(find . -maxdepth 1 | fzf --reverse --header="Jump to location")"
+    res="$(alias "$1" | awk '{split($0, arr, "="); print arr[2]}' | sed 's/cd /./g' | sed "s/'//g")"
+    if [ -n "$res" ]; then
+        if [ -d "$res" ]; then
+            cmd="cd"
+        else
+            cmd="select"
+        fi
+        res="$(printf '%s' "$res" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+        #lf -remote "send $id $cmd \"$res\""
+        lf -remote "send $id cd \"$res\""
+    fi
+}}
+map <c-f> :fzf_jump
 # compress current file or selected files with tar and gunzip
 cmd tar ${{
     set -f

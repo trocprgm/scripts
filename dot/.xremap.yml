@@ -1,21 +1,40 @@
 modmap:
   - name: Global
+    application:
+      not: steam_proton.steam_proton
     remap:
-      CapsLock: Ctrl_L
+      CapsLock: Control_L
+      LEFTCTRL: Super_L
+      Shift_L: Shift_L
+      Tab: Tab
+    
+  - name: Emu
+    application:
+     only: steam_proton.steam_proton
+    remap:
+      CapsLock: Shift_L
+      LEFTCTRL: Tab
+      Shift_L: Control_L
+      Tab: CapsLock
+
 keymap:
-  - name: Global 
+  - name: Map 
     exact_match: true
+    application:
+      only: Chromium
     remap:
-      "Ctrl-j": PageDown
-      "Ctrl-k": PageUp
-      "Ctrl-h": "Ctrl-Shift-Tab"
-      "Ctrl-l": "Ctrl-Tab"
+      # "Ctrl-j": PageDown
+      # "Ctrl-k": PageUp
+      # "Ctrl-h": "Ctrl-Shift-Tab"
+      # "Ctrl-l": "Ctrl-Tab"
       "Alt-s": PageDown
       "Alt-w": PageUp
       "Alt-a": "Ctrl-Shift-Tab"
       "Alt-d": "Ctrl-Tab"
+      # "Ctrl-Space-c":"Ctrl-Space"
       # "Win-a": "Ctrl-Shift-PageUp"
       # "Win-d": "Shift-PageUp"
       # "S-e": PageUp 
       # "Ctrl-Shift-Alt-s": "Ctrl-Shift-PageUp"
       # "Ctrl-Shift-Alt-w": "Ctrl-Shift-PageDown"
+  

@@ -22,7 +22,7 @@ call plug#begin()
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
@@ -92,15 +92,17 @@ set undofile
 set undodir=~/.local/share/nvim/undo
 "autocmd FileType * setlocal formatoptions-=o
 "set errorformat^=%-G%f:%l:\ warning:%m
-" map <C-L> gt
-" map <C-H> gT
-map <C-S-Tab> :tabprevious<CR>
-map <C-Tab> :tabnext<CR>
+ map <C-l> gt
+ map <C-h> gT
+ map <C-t> :tabnew<CR>
+ map <C-w> :tabclose<CR>
+"nnoremap <C-S-I> :tabprevious<CR>
+"nnoremap <C-I> :tabnext<CR>
 "Maps next and previos tab
-" map <C-j> <C-d>
-" map <C-k> <C-u>
-map <PageDown> <C-d>
-map <PageUp> <C-u>
+ map <C-j> <C-d> 
+ map <C-k> <C-u>
+"map <PageDown> <C-d>
+"map <PageUp> <C-u>
 "Maps page up and page down to a kinda scroll
 
 
@@ -112,7 +114,7 @@ inoremap <C-p> <Esc>
 " Ctrl-P behaves like Escape
 nnoremap <C-_> <C-p>
 " Make Ctrl-/ act like Ctrl-P (previous command)
-nnoremap <C-p> <Nop>
+"nnoremap <C-p> <Nop>
 " makes ctrl-p do nothing in command mode
 
 set relativenumber
