@@ -66,7 +66,7 @@ alias xmap="xremap --watch ~/.xremap.yml"
 alias xmaprc="nvim /home/$USER/.xremap.yml"
 #Program shortcuts
 alias bottlez="flatpak run com.usebottles.bottles"
-alias bg="feh --bg-fill /home/adman/.config/background/.bg.png"
+alias bg="feh --bg-fill /home/$USER/.config/bg2.png"
 # alias weather="curl https://wttr.in/"
 alias vw="nvim +VimwikiIndex"
 alias vd="nvim -c VimwikiMakeDiaryNote"

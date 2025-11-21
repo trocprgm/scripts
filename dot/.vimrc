@@ -35,7 +35,7 @@ Plug 'chrisbra/Recover.vim'
 call plug#end()
 
 let g:vimwiki_list = [
-  \ {'path': '~/MEGA/vimwiki/', 'syntax': 'default',  'ext': '.wiki', 'diary_frequency': 'weekly'}
+  \ {'path': '~/MEGA/vimwiki/', 'syntax': 'default',  'ext': '.wiki', 'diary_frequency': 'weekly', 'path_html': '~/MEGA/vimwiki/public_html'}
 \ ]
 
 "vvvv for gvim and vim
