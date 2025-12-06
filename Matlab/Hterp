@@ -1,0 +1,356 @@
+# Created by Octave 10.3.0, Fri Dec 05 00:06:57 2025 PST <rhom@FAT>
+# name: A
+# type: matrix
+# rows: 11
+# columns: 5
+ 240 0.068199999999999997 2619.6999999999998 2824.3000000000002 6.2264999999999997
+ 280 0.077100000000000002 2709.9000000000001 2941.3000000000002 6.4462000000000002
+ 320 0.085000000000000006 2788.4000000000001 3043.4000000000001 6.6245000000000003
+ 360 0.092299999999999993 2861.6999999999998 3138.6999999999998 6.7801
+ 400 0.099400000000000002 2932.8000000000002 3230.9000000000001 6.9211999999999998
+ 440 0.1062 3002.9000000000001 3321.5 7.0519999999999996
+ 500 0.1162 3108 3456.5 7.2337999999999996
+ 540 0.1227 3178.4000000000001 3546.5999999999999 7.3474000000000004
+ 600 0.13239999999999999 3285 3682.3000000000002 7.5084999999999997
+ 640 0.13880000000000001 3357 3773.5 7.6105999999999998
+ 700 0.1484 3466.5 3911.6999999999998 7.7571000000000003
+
+
+# name: H
+# type: class
+# classname: symfun
+# length: 2
+# name: sym
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: class
+# classname: sym
+# length: 6
+# name: ascii
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 53
+1439*pi*T   22917
+--------- + -----
+  1946       10  
+
+
+
+
+
+# name: extra
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: flat
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 25
+1439*pi*T/1946 + 22917/10
+
+
+
+
+
+# name: pickle
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 68
+Add(Mul(Rational(1439, 1946), pi, Symbol('T')), Rational(22917, 10))
+
+
+
+
+
+# name: size
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 2
+ 1 1
+
+
+
+
+
+# name: unicode
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 81
+1439⋅π⋅T   22917
+──────── + ─────
+  1946      10  
+
+
+
+
+
+
+
+
+
+
+# name: vars
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: class
+# classname: sym
+# length: 6
+# name: ascii
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+T
+
+
+
+
+
+# name: extra
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: flat
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+T
+
+
+
+
+
+# name: pickle
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+Symbol('T')
+
+
+
+
+
+# name: size
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 2
+ 1 1
+
+
+
+
+
+# name: unicode
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+T
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: Hdata
+# type: matrix
+# rows: 1
+# columns: 11
+ 2824.3000000000002 2941.3000000000002 3043.4000000000001 3138.6999999999998 3230.9000000000001 3321.5 3456.5 3546.5999999999999 3682.3000000000002 3773.5 3911.6999999999998
+
+
+# name: Sdata
+# type: matrix
+# rows: 1
+# columns: 11
+ 6.2264999999999997 6.4462000000000002 6.6245000000000003 6.7801 6.9211999999999998 7.0519999999999996 7.2337999999999996 7.3474000000000004 7.5084999999999997 7.6105999999999998 7.7571000000000003
+
+
+# name: T
+# type: class
+# classname: sym
+# length: 6
+# name: ascii
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+T
+
+
+
+
+
+# name: extra
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 0
+# columns: 0
+
+
+
+
+
+# name: flat
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+T
+
+
+
+
+
+# name: pickle
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 11
+Symbol('T')
+
+
+
+
+
+# name: size
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: matrix
+# rows: 1
+# columns: 2
+ 1 1
+
+
+
+
+
+# name: unicode
+# type: cell
+# rows: 1
+# columns: 1
+# name: <cell-element>
+# type: sq_string
+# elements: 1
+# length: 1
+T
+
+
+
+
+
+
+
+# name: Tdata
+# type: matrix
+# rows: 1
+# columns: 11
+ 240 280 320 360 400 440 500 540 600 640 700
+
+
+# name: alpha
+# type: scalar
+0.53190000000000004
+
+
+# name: ans
+# type: matrix
+# rows: 1
+# columns: 2
+ 2.3230654015056449 2291.7192440401514
+
+
+# name: xlabel
+# type: string
+# elements: 1
+# length: 9
+Tempature
+
+
