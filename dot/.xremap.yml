@@ -37,6 +37,8 @@ keymap:
       "Alt-w": PageUp
       "Alt-a": "Ctrl-Shift-Tab"
       "Alt-d": "Ctrl-Tab"
+      "Alt-q": "Alt-Left"
+      "Alt-e": "Alt-Right"
   - name: Map 
     exact_match: true
     application:
