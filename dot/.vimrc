@@ -35,8 +35,17 @@ Plug 'chrisbra/Recover.vim'
 call plug#end()
 
 let g:vimwiki_list = [
-  \ {'path': '~/MEGA/vimwiki/', 'syntax': 'default',  'ext': '.wiki', 'diary_frequency': 'weekly', 'path_html': '~/MEGA/vimwiki/public_html'}
-\ ]
+  \ {'path': '~/MEGA/vimwiki/',
+  \ 'syntax': 'default',
+  \  'ext': '.wiki',
+  \ 'diary_frequency': 'weekly',
+  \ 'template_path': '~/MEGA/vimwiki/templates',
+    "\ 'path_html': '~/MEGA/vimwiki/public_html',
+  "\ 'template_default': 'default',
+  \ 'template_default': 'def_template',
+  \ 'template_ext': '.html'}]
+
+let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr, pre, script'
 
 "vvvv for gvim and vim
 function! LF()

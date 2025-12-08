@@ -40,6 +40,8 @@ alias getgermany="xclip -selection primary -o"
 alias setpoland="xclip -selection secondary"
 alias getpoland="xclip -selection secondary -o"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias pwdf='realpath'
+# alias open='xdg-open > /dev/null 2>&1 &'
 #Navigation
 alias hm="cd /home/$USER/"
 alias cfg="cd /home/$USER/.config/"
