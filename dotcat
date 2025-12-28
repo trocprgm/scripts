@@ -2,6 +2,7 @@
 # KEEP IN THE SCRIPTS DIR
 # YOU DONT NEED TO PUT IT IN /scripts/dot
 scri="/home/$USER/scripts/dot"
+cp /home/$USER/.config/tmux/tmux.conf $scri/tmux.conf
 cp /home/$USER/.xinitrc $scri/.xinitrc
 cp /home/$USER/.bashrc $scri/.bashrc
 cp /home/$USER/.vimrc $scri/.vimrc
@@ -11,6 +12,6 @@ cp /home/$USER/.config/feh/keys $scri/keys
 cp /home/$USER/.xremap.yml $scri/.xremap.yml
 
 #DWM
-read -p "Copy Suckless files?"
-cp -R /usr/src/dwm651/ $scri/
-cp -R /usr/src/st/ $scri/
+# read -p "Copy Suckless files?"
+# cp -R /usr/src/dwm651/ $scri/
+# cp -R /usr/src/st/ $scri/

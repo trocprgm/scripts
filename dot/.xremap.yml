@@ -7,7 +7,6 @@ modmap:
       LEFTCTRL: Super_L
       Shift_L: Shift_L
       Tab: Tab
-      Calc: CapsLock
     
   - name: Emu
     application:
@@ -19,28 +18,34 @@ modmap:
       Tab: CapsLock
 
 keymap:
-  - name: Map 
+  # - name: HPdir
+  #   application:
+  #     only: steam_proton.steam_proton
+  #    remap:
+  #     "Super_L-h": Left
+  #     "Super_L-l": Right
+  #     "Super_L-j": Down
+  #     "Super_L-k": Up
+  - name: Dia
     exact_match: true
-    # application:
-    #   only: Chromium
     remap:
-     # "Ctrl-j": PageDown
-      # "Ctrl-k": PageUp
-      # "Ctrl-h": "Ctrl-Shift-Tab"
-      # "Ctrl-l": "Ctrl-Tab"
+      "Super_L-w": Up
+      "Super_L-s": Down
+      "Super_L-a": Left
+      "Super_L-d": Right
       "Alt-s": PageDown
       "Alt-w": PageUp
       "Alt-a": "Ctrl-Shift-Tab"
       "Alt-d": "Ctrl-Tab"
       "Alt-q": "Alt-Left"
       "Alt-e": "Alt-Right"
-      # "Ctrl-Space-c":"Ctrl-Space"
-      # "Win-a": "Ctrl-Shift-PageUp"
-      # "Win-d": "Shift-PageUp"
-      # "S-e": PageUp 
-      # "Ctrl-Shift-Alt-s": "Ctrl-Shift-PageUp"
-      # "Ctrl-Shift-Alt-w": "Ctrl-Shift-PageDown"
-  
+  - name: Map 
+    exact_match: true
+    application:
+      only: Chromium
+    remap:
+      "Control-h": "Ctrl-Shift-Tab"
+      "Control-l": "Ctrl-Tab"
+      "Control-j": PageDown
+      "Control-k": PageUp
 
-
-      ###DONT PUSH THIS
