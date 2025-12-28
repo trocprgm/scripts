@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <program> [args...]"
+    exit 1
+fi
+
+nohup "$@" >/dev/null 2>&1 &
+disown
