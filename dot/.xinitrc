@@ -49,16 +49,19 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 	unset f
 fi
 
-./.screenlayout/default.sh &
+# ./.screenlayout/default.sh &
+./.default.sh &
+# feh --bg-fill /home/$USER/.config/bg3.jpg &
 ./scripts/dwmbar &
-feh --bg-fill /home/$USER/.config/bg2.png &
+./.fehbg &
 # setxkbmap -option 'caps:ctrl_modifier' &
 xremap --watch /home/$USER/.xremap.yml &
 clipmenud &
 numlockx &
 megasync &
 nm-applet &
-mullvad-vpn &
+# mullvad-vpn &
+# feh --bg-scale ~/.config/bg3.jpg &
 "$twm" 
 #"$xclock" -geometry 50x50-1+1 &
 #"$xterm" -geometry 80x50+494+51 &

@@ -30,9 +30,12 @@ export PATH="/home/$USER/Appimage:$PATH"
 export PATH="/home/$USER/.screenlayout:$PATH"
 export PATH="/usr/NX/bin:$PATH"
 export PATH="$PATH:/home/$USER/.local/bin"
+
+export PATH="/home/$USER/.cargo/$PATH"
 # export PATH="$PATH:/home/$USER/.local/share/applications"
 #vvvv this shit is fire
 #System aliases
+alias rename="vimv"
 alias sc="xclip -selection c"
 alias gc="xclip -selection c -o"
 alias setgermany="xclip -selection primary"
@@ -40,10 +43,10 @@ alias getgermany="xclip -selection primary -o"
 alias setpoland="xclip -selection secondary"
 alias getpoland="xclip -selection secondary -o"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
-alias pwdf='realpath'
 # alias open='xdg-open > /dev/null 2>&1 &'
 #Navigation
 alias hm="cd /home/$USER/"
+alias tor="cd ~/Torrent/"
 alias cfg="cd /home/$USER/.config/"
 alias prgm="cd /home/$USER/prgm"
 alias scr="cd /home/$USER/scripts"
@@ -52,13 +55,14 @@ alias am="cd /home/$USER/Amy"
 alias mg="cd /home/$USER/MEGA"
 alias mgam="cd /home/$USER/MEGA/Amy"
 alias act="cd /home/$USER/scripts/dot"
+alias ds="cd ~/Downstale"
 alias thermo="cd /home/$USER/MEGA/davis/thermo/"
 alias fluids="cd /home/$USER/MEGA/davis/fluids/"
 alias mechmat="cd /home/$USER/MEGA/davis/mechmat/"
 alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/"
 alias vimrc="nvim ~/.vimrc"
 alias vimbak="cd ~/.local/share/nvim"
-alias vimswap="cd ~/.local/state/nvim/swap"
+alias vimswap="ls --format=single-column ~/.local/state/nvim/swap"
 alias bashrc="nvim ~/.bashrc"
 alias mks="sudo make clean install"
 alias sus="sudo su"
@@ -67,8 +71,10 @@ alias c="exit"
 alias xmap="xremap --watch ~/.xremap.yml"
 alias xmaprc="nvim /home/$USER/.xremap.yml"
 #Program shortcuts
+# alias th="thunar &"
 alias bottlez="flatpak run com.usebottles.bottles"
-alias bg="feh --bg-fill /home/$USER/.config/bg2.png"
+# alias bg="feh --bg-fill /home/$USER/.config/bg2.png"
+alias bg="feh --bg-fill /home/$USER/.config/bg3.jpg"
 # alias weather="curl https://wttr.in/"
 alias vw="nvim +VimwikiIndex"
 alias vd="nvim -c VimwikiMakeDiaryNote"
@@ -81,13 +87,18 @@ alias padoff="xinput disable 12"
 alias padon="xinput enable 12"
 alias powerstatus="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias lsoctal="stat -c \"%a %A %n\" *"
-# alias sl="systemctl suspend"
-alias device="cd /run/media/$USER/"
+alias mlv="run mullvad-vpn"
+
+alias pwdf='realpath'
 
 cdf() {
   local dir
   dir=$(fd -H --type d . '/' | fzf) || return
   cd "$dir" || return
+}
+
+trash() {
+    mv "$1" "/home/rhom/Downstale/$1"
 }
 
 #Makes fzf work?? yeah...
