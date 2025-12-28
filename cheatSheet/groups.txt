@@ -1,9 +1,0 @@
-groups
-id
-
-groupadd wheel
-
-usermod -aG wheel user
-useradd -m -g wheel user
-
-
