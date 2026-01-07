@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://mail.google.com/mail/u/2/#inbox"
+else
+  chromium --new-window " https://mail.google.com/mail/u/2/#inbox"
+fi

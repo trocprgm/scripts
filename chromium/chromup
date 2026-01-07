@@ -1,0 +1,6 @@
+#!/bin/bash
+if IsChrome; then
+  chromium --new-tab " https://app.goalswon.com/"
+else
+  chromium --new-window " https://app.goalswon.com/"
+fi
