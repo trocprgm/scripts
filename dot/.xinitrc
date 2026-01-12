@@ -53,8 +53,8 @@ fi
 ./.default.sh &
 # feh --bg-fill /home/$USER/.config/bg3.jpg &
 ./scripts/dwmbar &
-./.fehbg &
 # setxkbmap -option 'caps:ctrl_modifier' &
+./.fehbg &
 xremap --watch /home/$USER/.xremap.yml &
 clipmenud &
 numlockx &

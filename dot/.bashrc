@@ -45,23 +45,34 @@ alias getpoland="xclip -selection secondary -o"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 # alias open='xdg-open > /dev/null 2>&1 &'
 #Navigation
-alias hm="cd /home/$USER/"
-alias tor="cd ~/Torrent/"
-alias cfg="cd /home/$USER/.config/"
-alias prgm="cd /home/$USER/prgm"
-alias scr="cd /home/$USER/scripts"
-alias sck="cd /usr/src"
-alias am="cd /home/$USER/Amy"
-alias mg="cd /home/$USER/MEGA"
-alias mgam="cd /home/$USER/MEGA/Amy"
-alias act="cd /home/$USER/scripts/dot"
-alias ds="cd ~/Downstale"
-alias thermo="cd /home/$USER/MEGA/davis/thermo/"
-alias fluids="cd /home/$USER/MEGA/davis/fluids/"
-alias mechmat="cd /home/$USER/MEGA/davis/mechmat/"
-alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/"
+alias etc="cd /etc/ && ls"
+alias hm="cd /home/$USER/ && ls"
+alias tor="cd ~/Torrent/ && ls"
+alias cfg="cd /home/$USER/.config/ && ls"
+alias prgm="cd /home/$USER/prgm/ && ls"
+alias scr="cd /home/$USER/scripts/ && ls"
+alias sck="cd /usr/src/ && ls"
+alias am="cd /home/$USER/Amy/ && ls"
+alias mg="cd /home/$USER/MEGA/ && ls"
+alias mgam="cd /home/$USER/MEGA/Amy/ && ls"
+alias act="cd /home/$USER/scripts/dot/ && ls"
+alias ds="cd ~/Downstale/ && ls"
+alias thermo="cd /home/$USER/MEGA/davis/thermo/ && ls"
+alias dv="cd /home/$USER/MEGA/davis/ && ls"
+alias fluids="cd /home/$USER/MEGA/davis/fluids/ && ls"
+alias nuke="cd /home/rhom/MEGA/davis/nuke/ && ls"
+alias mechmat="cd /home/$USER/MEGA/davis/mechmat/ && ls"
+alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/ && ls"
+alias vimbak="cd ~/.local/share/nvim/ && ls"
+
+alias tf="cd /home/rhom/MEGA/davis/thermofluid && ls"
+alias na="cd /home/rhom/MEGA/davis/numanalysis && ls"
+alias mp="cd /home/rhom/MEGA/davis/manuproc && ls"
+alias pm="cd /home/rhom/MEGA/davis/propmat && ls"
+
+# Someshit
+alias wifipass="nmcli device wifi show-password"
 alias vimrc="nvim ~/.vimrc"
-alias vimbak="cd ~/.local/share/nvim"
 alias vimswap="ls --format=single-column ~/.local/state/nvim/swap"
 alias bashrc="nvim ~/.bashrc"
 alias mks="sudo make clean install"
@@ -74,7 +85,8 @@ alias xmaprc="nvim /home/$USER/.xremap.yml"
 # alias th="thunar &"
 alias bottlez="flatpak run com.usebottles.bottles"
 # alias bg="feh --bg-fill /home/$USER/.config/bg2.png"
-alias bg="feh --bg-fill /home/$USER/.config/bg3.jpg"
+# alias bg="feh --bg-fill /home/$USER/.config/bg3.jpg"
+alias bg="./.fehbg"
 # alias weather="curl https://wttr.in/"
 alias vw="nvim +VimwikiIndex"
 alias vd="nvim -c VimwikiMakeDiaryNote"
@@ -99,6 +111,11 @@ cdf() {
 
 trash() {
     mv "$1" "/home/rhom/Downstale/$1"
+}
+alias ctrash="cpaste ~/Downstale/"
+
+pdf2png() {
+    pdftoppm "$1" output -png
 }
 
 #Makes fzf work?? yeah...

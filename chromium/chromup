@@ -1,6 +1,6 @@
 #!/bin/bash
 if IsChrome; then
-  chromium --new-tab " https://app.goalswon.com/"
+  chromium --new-tab " file:///home/rhom/MEGA/vimwiki_html/index.html"
 else
-  chromium --new-window " https://app.goalswon.com/"
+  chromium --new-window " file:///home/rhom/MEGA/vimwiki_html/index.html"
 fi

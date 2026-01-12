@@ -104,7 +104,7 @@ set undodir=~/.local/share/nvim/undo
  map <C-l> gt
  map <C-h> gT
  map <C-t> :tabnew<CR>
- "map <C-w> :tabclose<CR>
+ map <C-w> :tabclose<CR>
 "nnoremap <C-S-I> :tabprevious<CR>
 "nnoremap <C-I> :tabnext<CR>
 "Maps next and previos tab
