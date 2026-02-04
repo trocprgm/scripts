@@ -6,3 +6,5 @@ for sel in Germany Poland Clipboard; do
   [[ -n "$out" ]] && echo "$out" || echo "<empty>"
   echo
 done
+echo "=== TMUX ==="
+echo "$(tmux list-buffers)"

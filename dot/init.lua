@@ -1,6 +1,36 @@
-vim.cmd('source ~/.vimrc')
+vim.cmd('source /home/rhom/.config/nvim/vimrc')
+
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+
+-- require("mason-lspconfig").setup({
+    -- automatic_enable = {
+    --     "clangdserver",
+    --     "luaserver",
+        -- automatic_enable = "true"
+-- })
+
+
+-- vim.lsp.enable('luaserver')
+vim.lsp.enable('clangd')
 
 local actions = require('telescope.actions')
+
+-- require('cmp_nvim_lsp').setup()
+
+-- require'cmp'.setup {
+--   sources = {
+--     { name = 'nvim_lsp' }
+--   }
+-- }
+
 
 require('telescope').setup({
   defaults = {
@@ -8,7 +38,7 @@ require('telescope').setup({
           '^node_modules/', -- Ignore node_modules directory
           '%.log',         -- Ignore files ending with .log
           'build/',        -- Ignore build directory
-          '.git/',
+	   '.git/',
           '.cache/',
         },
     mappings = {
@@ -26,11 +56,16 @@ require('telescope').setup({
   },
 })
 
-require('telescope').setup({
-  pickers = {
-    find_files = {
-      hidden = true,
-      no_ignore = false
+
+
+
+vim.lsp.config.clangd = {
+    cmd = {
+      'clangd',
+      -- '--clang-tidy',
+      -- '--background-index',
+      -- '--offset-encoding=utf-8',
+    },
+    root_markers = { '.clangd', 'compile_commands.json' },
+    filetypes = { 'c'},
     }
-  }
-})

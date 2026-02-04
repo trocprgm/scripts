@@ -19,6 +19,8 @@ set laststatus=1
 
 call plug#begin()
 " List your plugins here
+"
+Plug 'chrisbra/csv.vim'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-sensible'
@@ -101,10 +103,10 @@ set undofile
 set undodir=~/.local/share/nvim/undo
 "autocmd FileType * setlocal formatoptions-=o
 "set errorformat^=%-G%f:%l:\ warning:%m
- map <C-l> gt
- map <C-h> gT
- map <C-t> :tabnew<CR>
- map <C-w> :tabclose<CR>
+ "map <C-l> gt
+ "map <C-h> gT
+ "map <C-t> :tabnew<CR>
+ "map <C-w> :tabclose<CR>
 "nnoremap <C-S-I> :tabprevious<CR>
 "nnoremap <C-I> :tabnext<CR>
 "Maps next and previos tab

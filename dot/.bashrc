@@ -35,6 +35,7 @@ export PATH="/home/$USER/.cargo/$PATH"
 # export PATH="$PATH:/home/$USER/.local/share/applications"
 #vvvv this shit is fire
 #System aliases
+alias hellom="pwd && ls --color=auto"
 alias rename="vimv"
 alias sc="xclip -selection c"
 alias gc="xclip -selection c -o"
@@ -103,7 +104,7 @@ alias mlv="run mullvad-vpn"
 
 alias pwdf='realpath'
 
-cdf() {
+cdroot() {
   local dir
   dir=$(fd -H --type d . '/' | fzf) || return
   cd "$dir" || return
@@ -122,7 +123,7 @@ pdf2png() {
 eval "$(fzf --bash)"
 export FZF_DEFAULT_COMMAND="fd -H --type f"
 export FZF_ALT_C_COMMAND="fd -H --type d"
-export FZF_CTRL_T_COMMAND="fd -H --type f . '/'"
+export FZF_CTRL_T_COMMAND="fd -H --type f"
 # export FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}"fd --type d"
 #/etc/enviroment is used for global variables
 export PROMPT_COMMAND="history -a"
