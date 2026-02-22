@@ -1,0 +1,43 @@
+#
+# ~/.bash_profile
+#
+export HISTFILE=/home/$USER/.bash_trash/.bash_history
+alias daviswifi="echo \"DowdilyAssisesJanglingTerminals\" | setclip"
+
+alias am="cd /home/$USER/Amy/ && ls"
+alias mg="cd /home/$USER/MEGA/ && ls"
+alias mgam="cd /home/$USER/MEGA/Amy/ && ls"
+alias ds="cd ~/Downstale/ && ls"
+alias tor="cd ~/Torrent/ && ls"
+export GTK_THEME="adw-gtk3:dark"
+export GTK_THEME=Adwaita-dark
+export XDG_CONFIG_DIRS="$HOME/.config/xfce4/xfconf/:$HOME/.config/gtk-3.0/"
+export XDG_CONFIG_HOME="/home/rhom/.config/"
+export PATH="/home/rhom/scripts:$PATH"
+export PATH="/home/rhom/scripts/chromium:$PATH" 
+export PATH="/home/rhom/scripts/screen:$PATH" 
+export PATH="/home/rhom/Appimage:$PATH"
+export PATH="/home/$USER/.screenlayout:$PATH"
+export PATH="/usr/NX/bin:$PATH"
+export PATH="rhom:/home/rhom/.local/bin:$PATH"
+export PATH="/home/rhom/.cargo/rhom:$PATH"
+export PATH="/home/$USER/.local/share/applications:$PATH"
+alias thermo="cd /home/$USER/MEGA/davis/thermo/ && ls"
+alias dv="cd /home/$USER/MEGA/davis/ && ls"
+alias fluids="cd /home/$USER/MEGA/davis/fluids/ && ls"
+alias nuke="cd /home/rhom/MEGA/davis/nuke/ && ls"
+alias mechmat="cd /home/$USER/MEGA/davis/mechmat/ && ls"
+alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/ && ls"
+alias vimbak="cd ~/.local/share/nvim/ && ls"
+
+alias tf="cd /home/rhom/mega/davis/thermofluid && ls"
+alias na="cd /home/rhom/MEGA/davis/numanalysis && ls"
+alias mp="cd /home/rhom/MEGA/davis/manuproc && ls"
+alias pm="cd /home/rhom/MEGA/davis/propmat && ls"
+alias bg="feh --bg-fill"
+# alias bg="feh --bg-fill /home/$USER/.config/bg3.jpg"
+# alias bg="./.fehbg"
+
+alias map="chromium --new-window https://www.google.com/maps/"
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+

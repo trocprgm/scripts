@@ -1,0 +1,90 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+
+[[ $- != *i* ]] && return
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+export EDITOR=nvim
+export TERMINAL=st
+export CM_LAUNCHER=dmenu
+export FILE_MANAGER=thunar
+export DE_FILE_MANAGER=thunar
+
+#vvvv this shit is fire
+#System aliases
+alias hellom="pwd && ls --color=auto"
+alias sc="xclip -selection c"
+alias gc="xclip -selection c -o"
+alias setgermany="xclip -selection primary"
+alias getgermany="xclip -selection primary -o"
+alias setpoland="xclip -selection secondary"
+alias getpoland="xclip -selection secondary -o"
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias open='xdg-open > /dev/null 2>&1 &'
+#Navigation
+alias etc="cd /etc/ && ls"
+alias hm="cd ~ && ls -a"
+alias cfg="cd /home/rhom/scripts/dot/ && ls"
+alias prgm="cd /home/$USER/prgm/ && ls"
+alias scr="cd /home/$USER/scripts/ && ls"
+alias sck="cd /usr/src/ && ls"
+
+# Someshit
+alias wifipass="nmcli device wifi show-password"
+alias vimrc="nvim ~/.vimrc"
+alias vimswap="ls --format=single-column ~/.local/state/nvim/swap"
+alias rename="vimv"
+alias bashrc="nvim ~/.bashrc"
+alias mks="sudo make clean install"
+alias sus="sudo su"
+alias sckon="sudo rm config.h && sudo nvim config.def.h"
+alias c="exit"
+alias remap="xremap --watch ~/.xremap.yml"
+alias remaprc="nvim /home/$USER/.xremap.yml"
+#Program shortcuts
+alias bottlez="flatpak run com.usebottles.bottles"
+alias vw="nvim +VimwikiIndex"
+alias vd="nvim -c VimwikiMakeDiaryNote"
+alias ins="sudo pacman -S"
+alias light="xrandr --output eDP-1 --brightness"
+alias padoff="xinput disable 12"
+alias padon="xinput enable 12"
+alias powerstatus="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
+alias lsoctal="stat -c \"%a %A %n\" *"
+alias pwdf='realpath'
+
+cdroot() {
+  local dir
+  dir=$(fd -H --type d . '/' | fzf) || return
+  cd "$dir" || return
+}
+
+trash() {
+    mv "$1" "/home/rhom/Downstale/$1"
+}
+alias ctrash="cpaste ~/Downstale/"
+
+pdf2png() {
+    pdftoppm "$1" output -png
+}
+
+# FZF 
+export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
+export FZF_DEFAULT_OPTS=
+eval "$(fzf --bash)"
+export FZF_DEFAULT_COMMAND="fd -H --type f"
+export FZF_ALT_C_COMMAND="fd -H --type d"
+export FZF_CTRL_T_COMMAND="fd -H --type f"
+# export FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}"fd --type d"
+
+#/etc/enviroment is used for global variables
+# export PROMPT_COMMAND="history -a"
+#
+#Symbolic link is better for root user config
+#vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+#ln -s /home/$USER/.bashrc /root/.bashrc
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
