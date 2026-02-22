@@ -50,12 +50,13 @@ if [ -d "$xinitdir"/xinitrc.d ] ; then
 fi
 
 # ./.screenlayout/default.sh &
-./.default.sh &
+# ./.default.sh &
 # feh --bg-fill /home/$USER/.config/bg3.jpg &
 ./scripts/dwmbar &
 # setxkbmap -option 'caps:ctrl_modifier' &
-./.fehbg &
-xremap --watch /home/$USER/.xremap.yml &
+xremap --watch ~/scripts/dot/xremap.yml &
+xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-1-0 --off --output DP-1-1 --off --output HDMI-1-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1-2 --off &
+feh --bg-fill ~/scripts/screen/bg2.png &
 clipmenud &
 numlockx &
 megasync &

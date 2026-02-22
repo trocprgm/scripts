@@ -10,4 +10,5 @@ while true; do
 	ROOT="Swap:$VIMSWAP | $WEATHER | $BATT% | $DATE" 
 	xsetroot -name "$ROOT"
 	sleep 5s
+    $(wallpaper)
 done

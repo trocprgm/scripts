@@ -34,7 +34,7 @@ alias tf="cd /home/rhom/mega/davis/thermofluid && ls"
 alias na="cd /home/rhom/MEGA/davis/numanalysis && ls"
 alias mp="cd /home/rhom/MEGA/davis/manuproc && ls"
 alias pm="cd /home/rhom/MEGA/davis/propmat && ls"
-alias bg="feh --bg-fill"
+# alias bg="feh --bg-fill"
 # alias bg="feh --bg-fill /home/$USER/.config/bg3.jpg"
 # alias bg="./.fehbg"
 
