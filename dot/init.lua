@@ -1,71 +1,92 @@
-vim.cmd('source /home/rhom/.config/nvim/vimrc')
+-- local luaserver = ("/home/rhom/.config/nvim/luaserver")
+-- vim.lsp.enable('/home/rhom/.config/nvim/luaserver')
 
-require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
-})
+-- local clangd = ("/home/rhom/.config/nvimclangd")
+-- local matlab_ls = ("/home/rhom/.config/nvim/matlab_ls")
+-- local pylsp = ("/home/rhom/.config/nvim/pylsp")
 
--- require("mason-lspconfig").setup({
-    -- automatic_enable = {
-    --     "clangdserver",
-    --     "luaserver",
-        -- automatic_enable = "true"
+vim.opt.runtimepath:append ".local/share/nvim/plugged/mason.nvim/$PATH"
+vim.opt.runtimepath:append ".local/share/nvim/mason/"
+vim.opt.runtimepath:append ".config/nvim"
+
+-- vim.cmd('source /home/rhom/.config/nvim/vimrc')
+vim.cmd('source /home/rhom/scripts/dot/vimrc')
+
+-- require("mason").setup({
+--     ui = {
+--         icons = {
+--             package_installed = "✓",
+--             package_pending = "➜",
+--             package_uninstalled = "✗"
+--         }
+--     }
 -- })
 
 
--- vim.lsp.enable('luaserver')
-vim.lsp.enable('clangd')
 
-local actions = require('telescope.actions')
 
--- require('cmp_nvim_lsp').setup()
-
--- require'cmp'.setup {
---   sources = {
---     { name = 'nvim_lsp' }
---   }
+-- vim.lsp.config["matlab_ls"] = {
+  -- cmd = { "/home/rhom/.local/share/nvim/mason/packages/matlab-language-server/matlab-language-server"  },
+  -- cmd = {       '/home/rhom/.config/nvim/matlab_ls' },
+    -- filetypes = { 'matlab', 'm'},
 -- }
 
+vim.lsp.enable('matlab_ls')
 
-require('telescope').setup({
-  defaults = {
-    file_ignore_patterns = {
-          '^node_modules/', -- Ignore node_modules directory
-          '%.log',         -- Ignore files ending with .log
-          'build/',        -- Ignore build directory
-	   '.git/',
-          '.cache/',
-        },
-    mappings = {
-      i = {
-        ["<C-_>"] = actions.move_selection_previous, -- make Ctrl-/ act like Ctrl-p
-        ["<C-p>"] = false,                            -- disable original Ctrl-p
-        ["?"] = false,                                -- stop Telescope help from opening on Ctrl-/
-        ["<F2>"] = actions.which_key
-      },
-      n = {
-        ["<C-_>"] = actions.move_selection_previous,  -- optional: same in normal mode of picker
-        ["<F2>"] = actions.which_key
-      },
-    },
-  },
-})
-
-
-
-
-vim.lsp.config.clangd = {
+vim.lsp.config["clangd"] = {
     cmd = {
-      'clangd',
-      -- '--clang-tidy',
-      -- '--background-index',
-      -- '--offset-encoding=utf-8',
+      '/home/rhom/.config/nvim/clangd',
+      '--clang-tidy',
+      '--background-index',
+      '--offset-encoding=utf-8',
     },
     root_markers = { '.clangd', 'compile_commands.json' },
     filetypes = { 'c'},
-    }
+ }
+vim.lsp.enable('/home/rhom/.config/nvim/clangd')
+
+vim.lsp.with()
+
+vim.lsp.config["pylsp"] = {
+  cmd = { 'pylsp' },
+  filetypes = { 'python' },
+  root_markers = {
+    'pyproject.toml',
+    'setup.py',
+    'setup.cfg',
+    'requirements.txt',
+    'Pipfile',
+    '.git',
+  },
+}
+
+vim.lsp.enable('pylsp')
+
+
+-- local actions = require('telescope.actions')
+
+--
+-- require('telescope').setup({
+--   defaults = {
+--     file_ignore_patterns = {
+--           '^node_modules/', -- Ignore node_modules directory
+--           '%.log',         -- Ignore files ending with .log
+--           'build/',        -- Ignore build directory
+-- 	   '.git/',
+--           '.cache/',
+--         },
+--     mappings = {
+--       i = {
+--         ["<C-_>"] = actions.move_selection_previous, -- make Ctrl-/ act like Ctrl-p
+--         ["<C-p>"] = false,                            -- disable original Ctrl-p
+--         ["?"] = false,                                -- stop Telescope help from opening on Ctrl-/
+--         ["<F2>"] = actions.which_key
+--       },
+--       n = {
+--         ["<C-_>"] = actions.move_selection_previous,  -- optional: same in normal mode of picker
+--         ["<F2>"] = actions.which_key
+--       },
+--     },
+--   },
+-- })
+--

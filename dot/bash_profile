@@ -30,7 +30,7 @@ alias mechmat="cd /home/$USER/MEGA/davis/mechmat/ && ls"
 alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/ && ls"
 alias vimbak="cd ~/.local/share/nvim/ && ls"
 
-alias tf="cd /home/rhom/mega/davis/thermofluid && ls"
+alias tf="cd /home/rhom/MEGA/davis/thermofluid && ls"
 alias na="cd /home/rhom/MEGA/davis/numanalysis && ls"
 alias mp="cd /home/rhom/MEGA/davis/manuproc && ls"
 alias pm="cd /home/rhom/MEGA/davis/propmat && ls"

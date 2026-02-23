@@ -1,0 +1,10 @@
+#!/bin/sh
+# Get volume level from ALSA
+volume=$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')
+# Check if muted
+muted=$(amixer get Master | tail -n1 | grep -o 'off')
+if [ "$muted" ]; then
+    echo "Vol: Mute"
+else
+    echo "Vol: $volume%"
+fi

@@ -1,2 +1,4 @@
 #!/bin/bash
-chromium --app=http://192.168.10.69/
+# chromium --app=http://192.168.10.69/
+# chromium --profile-directory="JetKVM"
+chromium --app=http://192.168.10.69:80

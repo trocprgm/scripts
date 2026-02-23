@@ -34,17 +34,20 @@ alias scr="cd /home/$USER/scripts/ && ls"
 alias sck="cd /usr/src/ && ls"
 
 # Someshit
+alias nv="nvim"
+alias vim="nvim"
 alias wifipass="nmcli device wifi show-password"
-alias vimrc="nvim ~/.vimrc"
+alias vimrc="nvim -p ~/scripts/dot/vimrc ~/scripts/dot/init.lua ~/scripts/dot/tmux.conf"
 alias vimswap="ls --format=single-column ~/.local/state/nvim/swap"
 alias rename="vimv"
-alias bashrc="nvim ~/.bashrc"
+alias bashrc="nvim -p ~/scripts/dot/bashrc ~/scripts/dot/bash_profile"
+alias xinitrc="nvim -p ~/scripts/dot/bashrc"
 alias mks="sudo make clean install"
 alias sus="sudo su"
 alias sckon="sudo rm config.h && sudo nvim config.def.h"
 alias c="exit"
-alias remap="xremap --watch ~/.xremap.yml"
-alias remaprc="nvim /home/$USER/.xremap.yml"
+alias remap="xremap --watch /home/$USER/scripts/dot/xremap.yml"
+alias remaprc="nvim /home/$USER/scripts/dot/xremap.yml"
 #Program shortcuts
 alias bottlez="flatpak run com.usebottles.bottles"
 alias vw="nvim +VimwikiIndex"
@@ -74,11 +77,18 @@ pdf2png() {
 
 # FZF 
 export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
-export FZF_DEFAULT_OPTS=
+# export FZF_DEFAULT_OPTS=
 eval "$(fzf --bash)"
 export FZF_DEFAULT_COMMAND="fd -H --type f"
 export FZF_ALT_C_COMMAND="fd -H --type d"
-export FZF_CTRL_T_COMMAND="fd -H --type f"
+# export FZF_CTRL_T_COMMAND="fd -H --type f"
+# export FZF_CTRL_T_COMMAND="fzf --preview \"bat --style=numbers --color=always --line-range :500 {}\""
+# Use fd for fzf file list and bat for previews
+# export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+
+# fd --type f | fzf --preview 'cat {}'
 # export FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}"fd --type d"
 
 #/etc/enviroment is used for global variables
