@@ -54,6 +54,7 @@ fi
 ./scripts/screen/tv $
 # feh --bg-fill /home/$USER/.config/bg3.jpg &
 ./scripts/dwmbar &
+./scripts/screen/brutepaper &
 # ./.fehbg &
 # setxkbmap -option 'caps:ctrl_modifier' &
 # xremap --watch /home/$USER/.xremap.yml &
