@@ -25,13 +25,17 @@ alias setpoland="xclip -selection secondary"
 alias getpoland="xclip -selection secondary -o"
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias open='xdg-open > /dev/null 2>&1 &'
+alias lsperms="stat -c \"%a %A %n\" *"
+alias groupss="getent group"
 #Navigation
+alias rt="cd / && ls"
 alias etc="cd /etc/ && ls"
 alias hm="cd ~ && ls -a"
 alias cfg="cd /home/rhom/scripts/dot/ && ls"
 alias prgm="cd /home/$USER/prgm/ && ls"
 alias scr="cd /home/$USER/scripts/ && ls"
 alias sck="cd /usr/src/ && ls"
+
 
 # Someshit
 alias nv="nvim"

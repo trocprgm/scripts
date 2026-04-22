@@ -1,15 +1,15 @@
 #!/bin/sh
 
 while true; do
-    $(wallpaper)
+    # $(wallpaper)
     # POWER=$(curl -s http://192.168.1.75/rpc/Shelly.GetStatus | jq '.["pm1:0"] .apower')
     VOL=$(vol)
 	# BATT=$(cat /sys/class/power_supply/BAT0/capacity) 
-	DATE=$(date +"%A, M%m %B %d, %Y %I:%M %p") 
+	DATE=$(date +"%A, M%m %B %d, %Y %I:%M:%S %p") 
     # WEATHER=$(weather)
     # VIMSWAP=$(ls ~/.local/state/nvim/swap | wc -l)
 	#ROOT="$POWER $BATT $DATE" 
 	ROOT="Swap: $VOL | $BATT% | $DATE" 
 	xsetroot -name "$ROOT"
-	sleep 5s
+	sleep 1s
 done

@@ -3,7 +3,10 @@ set nocompatible
 runtime! plugin/sensible.vim
 runtime! archlinux.vim
 
-set laststatus=1
+"set laststatus=1
+set laststatus=2
+set statusline+="%<%F%m%r" 
+
 call plug#begin()
 " List your plugins here
 "

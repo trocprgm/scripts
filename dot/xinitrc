@@ -56,13 +56,14 @@ fi
 ./scripts/dwmbar &
 # ./.fehbg &
 # setxkbmap -option 'caps:ctrl_modifier' &
-xremap --watch /home/$USER/.xremap.yml &
+# xremap --watch /home/$USER/.xremap.yml &
+xremap --watch ~/scripts/dot/xremap.yml &
 echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save &
 clipmenud &
 numlockx &
 megasync &
 nm-applet &
-# mullvad-vpn &
+mullvad-vpn &
 # feh --bg-scale ~/.config/bg3.jpg &
 "$twm" 
 #"$xclock" -geometry 50x50-1+1 &
