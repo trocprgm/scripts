@@ -6,7 +6,7 @@ alias daviswifi="echo \"DowdilyAssisesJanglingTerminals\" | setclip"
 
 alias am="cd /home/$USER/Amy/ && ls"
 alias mg="cd /home/$USER/MEGA/ && ls"
-alias mgam="cd /home/$USER/MEGA/Amy/ && ls"
+alias mgam="cd /home/$USER/MEGA/megamy/ && ls"
 alias ds="cd ~/Downstale/ && ls"
 alias tor="cd ~/Torrent/ && ls"
 export GTK_THEME="adw-gtk3:dark"

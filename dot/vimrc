@@ -67,16 +67,11 @@ let skip_defaults_vim=1
 set clipboard=unnamedplus
 filetype on
 
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Files<cr>
-nnoremap <leader>fb <cmd>Buffers<cr>
-nnoremap <leader>tt <cmd>:tabnew<cr>
-nnoremap <leader>fh <cmd>Helptags<cr>
-
 "nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 let @o ='o€ý5xxxk'
 let @e ='oprintf("\x1B[€ý5'
+"nnoremap <leader>fr <cmd>:RecoverPluginFinish<CR>
 
 " set noswapfile
 
@@ -90,6 +85,11 @@ autocmd BufWritePost ?* mkview
 " Load view automatically when entering a buffer
 autocmd BufWinEnter ?* silent! loadview
 
+
+"autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal noswapfile
+autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal directory=~/MEGA/.vimwiki/swap//
+autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal backupdir=~/MEGA/.vimwiki/bak//
+
  "map <C-t> :tabnew<CR>
  "map <C-w> :tabclose<CR>
 "nnoremap <C-S-I> :tabprevious<CR>
@@ -99,14 +99,47 @@ autocmd BufWinEnter ?* silent! loadview
 "map <PageUp> <C-u>
 
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Files<cr>
+nnoremap <leader>fb <cmd>Buffers<cr>
+nnoremap <leader>tt <C-w>T
+"nnoremap <leader>fh <cmd>Helptags<cr>
+nnoremap <leader>qq <cmd>:q<cr>
+nnoremap <leader>QQ <cmd>:q!<cr>
+nnoremap <leader>wq <cmd>:wq<cr>
+nnoremap <leader>WQ <cmd>:wq!<cr>
+
 nnoremap ? :nohlsearch<CR>
+
+function! LeftRecover()
+    wincmd l
+    diffget
+    RecoverPluginFinish
+    write
+endfunction
+
+function! RightRecover()
+    wincmd l
+    diffput
+    RecoverPluginFinish
+    write
+endfunction
+
+command Fin :RecoverPluginFinish
+command Left call LeftRecover()
+command Right call RightRecover()
+command Rec :RecoverPluginHelp
 "? clears the search field
 inoremap <C-_> <C-p>
 " Ctrl-/ behaves like Ctrl-P
 inoremap <C-p> <Esc>
 " Ctrl-P behaves like Escape
 nnoremap <C-_> <C-p>
- nnoremap gb gT
+ nnoremap gf gT
+ nnoremap gh gt
+nnoremap gT :tabnew<CR>
+"nnoremap 
+
 " Make Ctrl-/ act like Ctrl-P (previous command)
 "nnoremap <C-p> <Nop>
 " makes ctrl-p do nothing in command mode

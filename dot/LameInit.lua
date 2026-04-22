@@ -7,8 +7,7 @@
 
 vim.opt.runtimepath:append ".local/share/nvim/plugged/mason.nvim/$PATH"
 vim.opt.runtimepath:append ".local/share/nvim/mason/"
-vim.opt.runtimepath:append "/home/rhom/.local/share/nvim/lazy/lazy.nvim/lua/lazy/"
-vim.opt.runtimepath:append ".config/nvim"
+vim.opt.runtimepath:append ".config/nvim/"
 
 -- vim.cmd('source /home/rhom/.config/nvim/vimrc')
 vim.cmd('source /home/rhom/scripts/dot/vimrc')
@@ -32,36 +31,36 @@ vim.cmd('source /home/rhom/scripts/dot/vimrc')
     -- filetypes = { 'matlab', 'm'},
 -- }
 
--- vim.lsp.enable('matlab_ls')
---
--- vim.lsp.config["clangd"] = {
---     cmd = {
---       '/home/rhom/.config/nvim/clangd',
---       '--clang-tidy',
---       '--background-index',
---       '--offset-encoding=utf-8',
---     },
---     root_markers = { '.clangd', 'compile_commands.json' },
---     filetypes = { 'c'},
---  }
--- vim.lsp.enable('/home/rhom/.config/nvim/clangd')
---
--- vim.lsp.with()
---
--- vim.lsp.config["pylsp"] = {
---   cmd = { 'pylsp' },
---   filetypes = { 'python' },
---   root_markers = {
---     'pyproject.toml',
---     'setup.py',
---     'setup.cfg',
---     'requirements.txt',
---     'Pipfile',
---     '.git',
---   },
--- }
---
--- vim.lsp.enable('pylsp')
+vim.lsp.enable('matlab_ls')
+
+vim.lsp.config["clangd"] = {
+    cmd = {
+      '/home/rhom/.config/nvim/clangd',
+      '--clang-tidy',
+      '--background-index',
+      '--offset-encoding=utf-8',
+    },
+    root_markers = { '.clangd', 'compile_commands.json' },
+    filetypes = { 'c'},
+ }
+vim.lsp.enable('/home/rhom/.config/nvim/clangd')
+
+vim.lsp.with()
+
+vim.lsp.config["pylsp"] = {
+  cmd = { 'pylsp' },
+  filetypes = { 'python' },
+  root_markers = {
+    'pyproject.toml',
+    'setup.py',
+    'setup.cfg',
+    'requirements.txt',
+    'Pipfile',
+    '.git',
+  },
+}
+
+vim.lsp.enable('pylsp')
 
 
 -- local actions = require('telescope.actions')
