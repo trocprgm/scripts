@@ -7,14 +7,24 @@
 [[ $- != *i* ]] && return
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
+CLIPTEMP="/home/rhom/Amy/.cliptemp"
 
 export EDITOR=nvim
 export TERMINAL=st
 export CM_LAUNCHER=dmenu
 export FILE_MANAGER=thunar
 export DE_FILE_MANAGER=thunar
+# FZF 
+export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
+# export FZF_DEFAULT_OPTS=
+eval "$(fzf --bash)"
+export FZF_DEFAULT_COMMAND="fd -H --type f"
+export FZF_ALT_C_COMMAND="fd -H --type d && ls"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
+# fd --type f | fzf --preview 'cat {}'
+# export FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}"fd --type d"
 
-#vvvv this shit is fire
 #System aliases
 alias hellom="pwd && ls --color=auto"
 alias sc="xclip -selection c"
@@ -23,46 +33,59 @@ alias setgermany="xclip -selection primary"
 alias getgermany="xclip -selection primary -o"
 alias setpoland="xclip -selection secondary"
 alias getpoland="xclip -selection secondary -o"
+alias sg="xclip -selection primary"
+alias gg="xclip -selection primary -o"
+alias sp="xclip -selection secondary"
+alias gp="xclip -selection secondary -o"
+
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias open='xdg-open > /dev/null 2>&1 &'
 alias lsperms="stat -c \"%a %A %n\" *"
 alias groupss="getent group"
-#Navigation
-alias rt="cd / && ls"
-alias etc="cd /etc/ && ls"
-alias hm="cd ~ && ls -a"
-alias cfg="cd /home/rhom/scripts/dot/ && ls"
-alias prgm="cd /home/$USER/prgm/ && ls"
-alias scr="cd /home/$USER/scripts/ && ls"
-alias sck="cd /usr/src/ && ls"
-alias b="cd .. && ls"
 
-# Someshit
+# VIM
 alias nv="nvim"
 alias vim="nvim"
-alias wifipass="nmcli device wifi show-password"
 alias vimrc="nvim -p ~/scripts/dot/vimrc ~/scripts/dot/init.lua ~/scripts/dot/tmux.conf"
 alias vimswap="ls /home/rhom/.local/state/nvim/swap | sed 's/%home%rhom%/~\//g' | sed 's/%/\//g'"
+alias vimbackup="ls /home/rhom/.local/share/nvim/backup"
+# | sed 's/%home%rhom%/~\//g' | sed 's/%/\//g'"
+alias vw="nvim +VimwikiIndex"
+# alias vv="cd /home/rhom/MEGA/vimwiki && fd --type f /home/rhom/MEGA/vimwiki/ | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs nvim"
+alias vv="fd --type f . '/home/rhom/MEGA/vimwiki/' | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs nvim"
+alias vvv="fd --type f . '/home/rhom/MEGA/vimwiki/' | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs floaterm"
+# alias ctrlt="cd /home/rhom/MEGA/vimwiki && nvim \"$(fzf --type f)\""
+# alias vw="nvim $ctrlt"
+alias vd="nvim -c VimwikiMakeDiaryNote"
 alias rename="vimv"
+alias rn="vimv"
+
+alias wifipass="nmcli device wifi show-password"
 alias bashrc="nvim -p ~/scripts/dot/bashrc ~/scripts/dot/bash_profile"
 alias xinitrc="nvim -p ~/scripts/dot/xinitrc"
+alias remaprc="nvim /home/$USER/scripts/dot/xremap.yml"
 alias mks="sudo make clean install"
 alias sus="sudo su"
 alias sckon="sudo rm config.h && sudo nvim config.def.h"
 alias c="exit"
 alias remap="xremap --watch /home/$USER/scripts/dot/xremap.yml"
-alias remaprc="nvim /home/$USER/scripts/dot/xremap.yml"
 #Program shortcuts
 alias bottlez="flatpak run com.usebottles.bottles"
-alias vw="nvim +VimwikiIndex"
-alias vd="nvim -c VimwikiMakeDiaryNote"
 alias ins="sudo pacman -S"
 alias light="xrandr --output eDP-1 --brightness"
 alias padoff="xinput disable 12"
 alias padon="xinput enable 12"
 alias powerstatus="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias lsoctal="stat -c \"%a %A %n\" *"
-alias pwdf='realpath'
+# alias pwdf='realpath'
+
+pwd() {
+    if [ -z "$1" ]; then
+        echo "$PWD"
+    elif [ -n "$1" ]; then
+        realpath "$1"
+    fi
+}
 
 cdroot() {
   local dir
@@ -78,18 +101,40 @@ alias ctrash="cpaste ~/Downstale/"
 pdf2png() {
     pdftoppm "$1" output -png
 }
+swapkill() {
+    rm /home/$USER/.local/state/nvim/swap/*
+}
 
-# FZF 
-export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
-# export FZF_DEFAULT_OPTS=
-eval "$(fzf --bash)"
-export FZF_DEFAULT_COMMAND="fd -H --type f"
-export FZF_ALT_C_COMMAND="fd -H --type d && ls"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
-# fd --type f | fzf --preview 'cat {}'
-# export FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}"fd --type d"
+clippy() {
+    rm "$CLIPTEMP"
+    touch "$CLIPTEMP"
+    if [ "$1" == "tmux" ]; then
+        # echo "<h1>***TMUX***</h1>" >> "$CLIPTEMP"
+        echo "###   TMUX   ###" >> "$CLIPTEMP"
+        # echo -e "Buffer 0: $(tmux show-buffer -b buffer0)\n" >> "$CLIPTEMP"
+        # echo -e "Buffer 1: $(tmux show-buffer -b buffer1)\n" >> "$CLIPTEMP"
+        # echo -e "Buffer 2: $(tmux show-buffer -b buffer2)\n" >> "$CLIPTEMP"
+        # echo -e "Buffer 3: $(tmux show-buffer -b buffer3)\n" >> "$CLIPTEMP"
+        # echo -e "Buffer 4: $(tmux show-buffer -b buffer4)\n" >> "$CLIPTEMP"
+        echo "$(tmux list-buffers)" | awk 'BEGIN { FS="bytes: " } { print $2 }' >> "$CLIPTEMP"
+    elif [ "$1" == "bak" ]; then
+    echo "###   VIM BACKUP   ###" >> "$CLIPTEMP"
+    echo -e "$(vimbackup)" >> "$CLIPTEMP"
+    elif [ "$1" == "swp" ]; then
+    echo "###   VIM SWAP   ###" >> "$CLIPTEMP"
+    echo -e "$(vimswap)" >> "$CLIPTEMP"
+    else
+    for sel in Germany Poland Clipboard; do
+      out=$(xclip -selection "$sel" -o 2>/dev/null || true)
+      echo -e "\n###   $sel   ###" >> "$CLIPTEMP"
+      [[ -n "$out" ]] && echo "$out" >> "$CLIPTEMP" || echo "<empty>" >> "$CLIPTEMP"
+    done
+    fi
+    bat --style=plain --language=md "$CLIPTEMP"
+    # bat -f "$CLIPTEMP"
+}
 
+source /path/fzf-floaterm/macros/termcwd.sh
 #/etc/enviroment is used for global variables
 # export PROMPT_COMMAND="history -a"
 

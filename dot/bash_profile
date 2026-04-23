@@ -1,14 +1,42 @@
-#
+#!/bin/bash
+#alias ="cd "
 # ~/.bash_profile
 #
 export HISTFILE=/home/$USER/.bash_trash/.bash_history
 alias daviswifi="echo \"DowdilyAssisesJanglingTerminals\" | setclip"
 
+MEGA="/home/rhom/MEGA"
+
+#Navigation
+alias rt="cd / && ls"
+alias etc="cd /etc/ && ls"
+alias hm="cd ~ && ls -a"
+alias cfg="cd /home/rhom/scripts/dot/ && ls"
+alias prgm="cd /home/$USER/prgm/ && ls"
+alias scr="cd /home/$USER/scripts/ && ls"
+alias sck="cd /usr/src/ && ls"
+alias b="cd .. && ls"
 alias am="cd /home/$USER/Amy/ && ls"
-alias mg="cd /home/$USER/MEGA/ && ls"
-alias mgam="cd /home/$USER/MEGA/megamy/ && ls"
 alias ds="cd ~/Downstale/ && ls"
 alias tor="cd ~/Torrent/ && ls"
+alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/ && ls"
+alias vimbak="cd ~/.local/share/nvim/ && ls"
+
+
+# MEGA
+alias tf="cd $MEGA/davis/thermofluid && ls"
+alias na="cd $MEGA/davis/numanalysis && ls"
+alias mp="cd $MEGA/davis/manuproc && ls"
+alias pm="cd $MEGA/davis/propmat && ls"
+alias mg="cd $MEGA/ && ls"
+alias mgam="cd $MEGA/megamy/ && ls"
+alias vimwiki="cd $MEGA/vimwiki/ && ls"
+alias thermo="cd $MEGA/davis/thermo/ && ls"
+alias dv="cd $MEGA/davis/ && ls"
+alias fluids="cd $MEGA/davis/fluids/ && ls"
+alias nuke="cd $MEGA/davis/nuke/ && ls"
+alias mechmat="cd $MEGA/davis/mechmat/ && ls"
+
 export GTK_THEME="adw-gtk3:dark"
 export GTK_THEME=Adwaita-dark
 export XDG_CONFIG_DIRS="$HOME/.config/xfce4/xfconf/:$HOME/.config/gtk-3.0/"
@@ -22,18 +50,6 @@ export PATH="/usr/NX/bin:$PATH"
 export PATH="rhom:/home/rhom/.local/bin:$PATH"
 export PATH="/home/rhom/.cargo/rhom:$PATH"
 export PATH="/home/$USER/.local/share/applications:$PATH"
-alias thermo="cd /home/$USER/MEGA/davis/thermo/ && ls"
-alias dv="cd /home/$USER/MEGA/davis/ && ls"
-alias fluids="cd /home/$USER/MEGA/davis/fluids/ && ls"
-alias nuke="cd /home/rhom/MEGA/davis/nuke/ && ls"
-alias mechmat="cd /home/$USER/MEGA/davis/mechmat/ && ls"
-alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/ && ls"
-alias vimbak="cd ~/.local/share/nvim/ && ls"
-
-alias tf="cd /home/rhom/MEGA/davis/thermofluid && ls"
-alias na="cd /home/rhom/MEGA/davis/numanalysis && ls"
-alias mp="cd /home/rhom/MEGA/davis/manuproc && ls"
-alias pm="cd /home/rhom/MEGA/davis/propmat && ls"
 # alias bg="feh --bg-fill"
 # alias bg="feh --bg-fill /home/$USER/.config/bg3.jpg"
 # alias bg="./.fehbg"

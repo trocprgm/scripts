@@ -12,6 +12,7 @@ call plug#begin()
 "
 Plug 'chrisbra/csv.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'voldikss/fzf-floaterm'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
@@ -27,18 +28,61 @@ Plug 'chrisbra/Recover.vim'
 "Plug 'nvim-lua/kickstart.nvim'
 call plug#end()
 
-let g:vimwiki_list = [
-  \ {'path': '~/MEGA/vimwiki/',
-  \ 'syntax': 'default',
-  \  'ext': '.wiki',
-  \ 'diary_frequency': 'weekly',
-  \ 'template_path': '~/MEGA/vimwiki/templates',
-    \ 'path_html': '~/MEGA/vimwiki/public_html',
-  "\ 'template_default': 'default',
-  \ 'template_default': 'def_template',
-  \ 'template_ext': '.html'}]
+let g:fzf_floaterm_newentries = {
+  \ '+vimwiki' : {
+    \ 'title': 'VimWiki',
+    \ 'cmd': 'bash -l && vvv' },
+  \ '+root' : {
+    \ 'title': 'Root Shell',
+    \ 'cmd': 'sudo sh' },
+  \ '+fish' : {
+    \ 'title': 'Fish Shell',
+    \ 'cmd': 'fish' },
+  \ '+pwsh' : {
+    \ 'title': 'Powershell',
+    \ 'cmd': 'pwsh' }
+  \ }
 
-let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr, pre, script'
+let master = {}
+let master.path = '~/MEGA/vimwiki/'
+let master.nested_syntaxes = {'markdown': 'md', 'vimwiki': 'wiki'}
+let master.index = 'index'
+let master.name = 'Master Index'
+let master.diary_index = 'diary'
+let master.diary_frequency = 'weekly'
+
+let machine = {}
+let machine.path = '~/MEGA/vimwiki/'
+let machine.nested_syntaxes = {'markdown': 'md', 'vimwiki': 'wiki'}
+let machine.index = 'machine'
+let machine.name = 'Machinery'
+
+let history = {}
+let history.path = '~/MEGA/vimwiki/'
+let history.nested_syntaxes = {'markdown': 'md', 'vimwiki': 'wiki'}
+let history.index = 'history'
+let history.name = 'History'
+
+let unix = {}
+let unix.path = '~/MEGA/vimwiki/'
+let unix.nested_syntaxes = {'markdown': 'md', 'vimwiki': 'wiki'}
+let unix.index = 'unix'
+let unix.name = 'Unix'
+
+let g:vimwiki_list = [master, machine, history, unix]
+
+
+"let g:vimwiki_list = [
+"  \ {'path': '~/MEGA/vimwiki/',
+"  \ 'syntax': 'default',
+"  \  'ext': '.wiki',
+"  \ 'diary_frequency': 'weekly',
+"  \ 'template_path': '~/MEGA/vimwiki/templates',
+"    \ 'path_html': '~/MEGA/vimwiki/public_html',
+"  "\ 'template_default': 'default',
+"  \ 'template_default': 'def_template',
+"  \ 'template_ext': '.html'}]
+"let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr, pre, script'
 
 "vvvv for gvim and vim
 "function! LF()
@@ -72,7 +116,8 @@ filetype on
 let @o ='o€ý5xxxk'
 let @e ='oprintf("\x1B[€ý5'
 "nnoremap <leader>fr <cmd>:RecoverPluginFinish<CR>
-
+let g:floaterm_opener = 'edit'
+nnoremap <leader>ws <cmd>:FloatermNew --height=0.6 --width=0.4 --wintype=float --name=floaterm1 --position=topleft --opener --autoclose=2 st --cmd="bash -l && vvv"<cr>
 " set noswapfile
 
 " Set viewoptions to only save folds and cursor position
@@ -85,6 +130,12 @@ autocmd BufWritePost ?* mkview
 " Load view automatically when entering a buffer
 autocmd BufWinEnter ?* silent! loadview
 
+" Start with no swap file for new buffers
+set noswapfile
+
+" Enable swap file only after the first modification
+autocmd BufWritePre,BufReadPost * setlocal noswapfile
+autocmd InsertEnter,TextYankPost * setlocal swapfile
 
 "autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal noswapfile
 autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal directory=~/MEGA/.vimwiki/swap//
@@ -103,11 +154,10 @@ autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal backupdir=~/MEGA/.vimwi
 nnoremap <leader>ff <cmd>Files<cr>
 nnoremap <leader>fb <cmd>Buffers<cr>
 nnoremap <leader>tt <C-w>T
-"nnoremap <leader>fh <cmd>Helptags<cr>
 nnoremap <leader>qq <cmd>:q<cr>
-nnoremap <leader>QQ <cmd>:q!<cr>
+nnoremap <leader>QQ <cmd>:qall<cr>
 nnoremap <leader>wq <cmd>:wq<cr>
-nnoremap <leader>WQ <cmd>:wq!<cr>
+nnoremap <leader>WQ <cmd>:wqall<cr>
 
 nnoremap ? :nohlsearch<CR>
 
@@ -129,10 +179,12 @@ command Fin :RecoverPluginFinish
 command Left call LeftRecover()
 command Right call RightRecover()
 command Rec :RecoverPluginHelp
+
 "? clears the search field
 inoremap <C-_> <C-p>
 " Ctrl-/ behaves like Ctrl-P
 inoremap <C-p> <Esc>
+tnoremap <Esc> <C-\><C-n>
 " Ctrl-P behaves like Escape
 nnoremap <C-_> <C-p>
  nnoremap gf gT
