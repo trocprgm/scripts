@@ -20,6 +20,7 @@ Plug 'junegunn/fzf'
 Plug 'chrisbra/Colorizer'
 Plug 'vimwiki/vimwiki'
 Plug 'chrisbra/Recover.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 "Plug 'williamboman/mason.nvim'
 "Plug 'williamboman/mason-lspconfig.nvim'
@@ -141,7 +142,7 @@ autocmd InsertEnter,TextYankPost * setlocal swapfile
 autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal directory=~/MEGA/.vimwiki/swap//
 autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal backupdir=~/MEGA/.vimwiki/bak//
 
- "map <C-t> :tabnew<CR>
+ map <C-t> :tabnew<CR>
  "map <C-w> :tabclose<CR>
 "nnoremap <C-S-I> :tabprevious<CR>
 "nnoremap <C-I> :tabnext<CR>
@@ -157,7 +158,16 @@ nnoremap <leader>tt <C-w>T
 nnoremap <leader>qq <cmd>:q<cr>
 nnoremap <leader>QQ <cmd>:qall<cr>
 nnoremap <leader>wq <cmd>:wq<cr>
-nnoremap <leader>WQ <cmd>:wqall<cr>
+nnoremap <leader>WQ <cmd>:Boing<cr>
+nnoremap <leader>wqq <cmd>:wqall<cr>
+"nnoremap <leader>WQ <cmd>:wqall<cr>
+function! Boing()
+    wqall
+    ":!{echo "Test"}
+    "!exit
+    "Dippy
+endfunction
+    
 
 nnoremap ? :nohlsearch<CR>
 
@@ -175,10 +185,12 @@ function! RightRecover()
     write
 endfunction
 
+command Boing call Boing()
 command Fin :RecoverPluginFinish
 command Left call LeftRecover()
 command Right call RightRecover()
 command Rec :RecoverPluginHelp
+command Dippy :!{echo "Test"}
 
 "? clears the search field
 inoremap <C-_> <C-p>
@@ -191,6 +203,33 @@ nnoremap <C-_> <C-p>
  nnoremap gh gt
 nnoremap gT :tabnew<CR>
 "nnoremap 
+"let g:tmux_navigator_no_mappings = 1
+
+"nnoremap <silent> <C-Left> :<C-U>TmuxNavigateLeft<cr>
+"nnoremap <silent> <C-Down> :<C-U>TmuxNavigateDown<cr>
+"nnoremap <silent> <C-Up> :<C-U>TmuxNavigateUp<cr>
+"nnoremap <silent> <C-Right> :<C-U>TmuxNavigateRight<cr>
+"nnoremap <silent> <C-h> :<C-U>TmuxNavigateLeft<cr>
+"nnoremap <silent> <C-j> :<C-U>TmuxNavigateDown<cr>
+"nnoremap <silent> <C-k> :<C-U>TmuxNavigateUp<cr>
+"nnoremap <silent> <C-l> :<C-U>TmuxNavigateRight<cr>
+"nnoremap <silent> <C-\> :<C-U>TmuxNavigatePrevious<cr>
+let tmux_navigator_no_mappings = 1
+if has('vim_starting')
+  if &rtp =~ '\<tmux-navigator\>'
+    nnoremap <silent> <c-a><c-h> :TmuxNavigateLeft<cr>
+    nnoremap <silent> <c-a><c-j> :TmuxNavigateDown<cr>
+    nnoremap <silent> <c-a><c-k> :TmuxNavigateUp<cr>
+    nnoremap <silent> <c-a><c-l> :TmuxNavigateRight<cr>
+    nnoremap <silent> <c-a><c-^> :TmuxNavigatePrevious<cr>
+
+  "else
+  "  nnoremap <C-h> <c-w>h
+  "  nnoremap <C-j> <c-w>j
+  "  nnoremap <C-k> <c-w>k
+  "  nnoremap <C-l> <c-w>l
+  endif
+endif
 
 " Make Ctrl-/ act like Ctrl-P (previous command)
 "nnoremap <C-p> <Nop>

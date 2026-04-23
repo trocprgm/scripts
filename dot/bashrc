@@ -44,7 +44,7 @@ alias lsperms="stat -c \"%a %A %n\" *"
 alias groupss="getent group"
 
 # VIM
-alias nv="nvim"
+alias nn="nvim"
 alias vim="nvim"
 alias vimrc="nvim -p ~/scripts/dot/vimrc ~/scripts/dot/init.lua ~/scripts/dot/tmux.conf"
 alias vimswap="ls /home/rhom/.local/state/nvim/swap | sed 's/%home%rhom%/~\//g' | sed 's/%/\//g'"
@@ -69,6 +69,7 @@ alias sus="sudo su"
 alias sckon="sudo rm config.h && sudo nvim config.def.h"
 alias c="exit"
 alias remap="xremap --watch /home/$USER/scripts/dot/xremap.yml"
+alias tmuxagain="tmux source /home/rhom/scripts/dot/tmux.conf"
 #Program shortcuts
 alias bottlez="flatpak run com.usebottles.bottles"
 alias ins="sudo pacman -S"
@@ -87,7 +88,7 @@ pwd() {
     fi
 }
 
-cdroot() {
+fuzzy() {
   local dir
   dir=$(fd -H --type d . '/' | fzf) || return
   cd "$dir" || return
@@ -134,7 +135,8 @@ clippy() {
     # bat -f "$CLIPTEMP"
 }
 
-source /path/fzf-floaterm/macros/termcwd.sh
+source /home/rhom/.local/share/nvim/plugged/fzf-floaterm/macros/termcwd.sh
+
 #/etc/enviroment is used for global variables
 # export PROMPT_COMMAND="history -a"
 
