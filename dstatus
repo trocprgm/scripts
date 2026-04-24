@@ -1,0 +1,14 @@
+#!/bin/sh
+    # $(wallpaper)
+    # POWER=$(curl -s http://192.168.1.75/rpc/Shelly.GetStatus | jq '.["pm1:0"] .apower')
+    VOL=$(vol)
+	# BATT=$(cat /sys/class/power_supply/BAT0/capacity) 
+	DATE=$(date +"%A, M%m %B %d, %Y %I:%M:%S %p") 
+    WEATHER=$(weather)
+    VIMSWAP=$(ls ~/.local/state/nvim/swap | wc -l)
+    # SENSOR=$(sensors)
+	#ROOT="$POWER $BATT $DATE"  |  $(sensors)
+    ROOT="$VOL  | $BATT% |  $WEATHER  |   $DATE "
+    # echo -e $ROOT | dmenu -l 8
+    printf '%s\n' "$ROOT" '    ' "$(sensors)" | dmenu -l 9
+

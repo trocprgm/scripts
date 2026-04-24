@@ -118,7 +118,7 @@ let @o ='o€ý5xxxk'
 let @e ='oprintf("\x1B[€ý5'
 "nnoremap <leader>fr <cmd>:RecoverPluginFinish<CR>
 let g:floaterm_opener = 'edit'
-nnoremap <leader>ws <cmd>:FloatermNew --height=0.6 --width=0.4 --wintype=float --name=floaterm1 --position=topleft --opener --autoclose=2 st --cmd="bash -l && vvv"<cr>
+"nnoremap <leader>ws <cmd>:FloatermNew --height=0.6 --width=0.4 --wintype=float --name=floaterm1 --position=topleft --opener --autoclose=2 st --cmd="bash -l && vvv"<cr>
 " set noswapfile
 
 " Set viewoptions to only save folds and cursor position
@@ -142,7 +142,7 @@ autocmd InsertEnter,TextYankPost * setlocal swapfile
 autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal directory=~/MEGA/.vimwiki/swap//
 autocmd BufNewFile,BufReadPost ~/MEGA/vimwiki/* setlocal backupdir=~/MEGA/.vimwiki/bak//
 
- map <C-t> :tabnew<CR>
+ "map <C-t> :tabnew<CR>
  "map <C-w> :tabclose<CR>
 "nnoremap <C-S-I> :tabprevious<CR>
 "nnoremap <C-I> :tabnext<CR>
@@ -156,17 +156,11 @@ nnoremap <leader>ff <cmd>Files<cr>
 nnoremap <leader>fb <cmd>Buffers<cr>
 nnoremap <leader>tt <C-w>T
 nnoremap <leader>qq <cmd>:q<cr>
-nnoremap <leader>QQ <cmd>:qall<cr>
+nnoremap <leader>QQ <cmd>:q!<cr>
 nnoremap <leader>wq <cmd>:wq<cr>
-nnoremap <leader>WQ <cmd>:Boing<cr>
 nnoremap <leader>wqq <cmd>:wqall<cr>
-"nnoremap <leader>WQ <cmd>:wqall<cr>
-function! Boing()
-    wqall
-    ":!{echo "Test"}
-    "!exit
-    "Dippy
-endfunction
+nnoremap <leader>WQ <cmd>:wq!<cr>
+nnoremap <leader>WQQ <cmd>:wqall!<cr>
     
 
 nnoremap ? :nohlsearch<CR>
@@ -185,12 +179,10 @@ function! RightRecover()
     write
 endfunction
 
-command Boing call Boing()
 command Fin :RecoverPluginFinish
 command Left call LeftRecover()
 command Right call RightRecover()
 command Rec :RecoverPluginHelp
-command Dippy :!{echo "Test"}
 
 "? clears the search field
 inoremap <C-_> <C-p>
@@ -222,7 +214,7 @@ if has('vim_starting')
     nnoremap <silent> <c-a><c-k> :TmuxNavigateUp<cr>
     nnoremap <silent> <c-a><c-l> :TmuxNavigateRight<cr>
     nnoremap <silent> <c-a><c-^> :TmuxNavigatePrevious<cr>
-
+    nnoremap <silent> <c-a><c-q> :wq<cr>
   "else
   "  nnoremap <C-h> <c-w>h
   "  nnoremap <C-j> <c-w>j

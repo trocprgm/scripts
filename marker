@@ -1,4 +1,5 @@
 #!/bin/bash
+#Turns a comma seperated value table into shell scripts that function as books marks dia dmenu
 
 INPUT_CSV="/home/$USER/scripts/bookmarks.csv"
 OUTPUT_DIR="/home/$USER/scripts/chromium/"

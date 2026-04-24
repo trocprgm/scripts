@@ -12,8 +12,11 @@ CLIPTEMP="/home/rhom/Amy/.cliptemp"
 export EDITOR=nvim
 export TERMINAL=st
 export CM_LAUNCHER=dmenu
+# export FILE_MANAGER=thunar
+# export DE_FILE_MANAGER=thunar
+#.config/xdg-desktop-portal/portals.conf
 export FILE_MANAGER=thunar
-export DE_FILE_MANAGER=thunar
+export DE_FILE_MANAGER=Nemo
 # FZF 
 export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
 # export FZF_DEFAULT_OPTS=
@@ -90,8 +93,11 @@ pwd() {
 
 fuzzy() {
   local dir
-  dir=$(fd -H --type d . '/' | fzf) || return
-  cd "$dir" || return
+    if [ -z "$1" ]; then
+      dir=$(fd -H --type f . '/' | fzf) || return
+    elif [ -n "$1" ]; then
+      dir=$(fd -H --type f . "$1/" | fzf) || return
+    fi
 }
 
 trash() {
@@ -124,6 +130,11 @@ clippy() {
     elif [ "$1" == "swp" ]; then
     echo "###   VIM SWAP   ###" >> "$CLIPTEMP"
     echo -e "$(vimswap)" >> "$CLIPTEMP"
+    elif [ "$1" == "vim" ]; then
+    echo "###   VIM SWAP   ###" >> "$CLIPTEMP"
+    echo -e "$(vimswap)" >> "$CLIPTEMP"
+    echo "###   VIM BACKUP   ###" >> "$CLIPTEMP"
+    echo -e "$(vimbackup)" >> "$CLIPTEMP"
     else
     for sel in Germany Poland Clipboard; do
       out=$(xclip -selection "$sel" -o 2>/dev/null || true)
