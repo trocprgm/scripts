@@ -51,7 +51,7 @@ fi
 
 # ./.screenlayout/default.sh &
 # ./.default.sh &
-./scripts/screen/tv $
+./scripts/screen/hd $
 # feh --bg-fill /home/$USER/.config/bg3.jpg &
 ./scripts/dwmbar &
 ./scripts/screen/brutepaper &

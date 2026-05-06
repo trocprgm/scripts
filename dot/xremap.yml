@@ -8,14 +8,15 @@ modmap:
       Shift_L: Shift_L
       Tab: Tab
     
-  - name: Emu
-    application:
-     only: steam_proton.steam_proton
-    remap:
-      CapsLock: Shift_L
-      LEFTCTRL: Tab
-      Shift_L: Control_L
-      Tab: CapsLock
+      #Use for HP50G Emulator
+  # - name: Emu
+  #   application:
+  #    only: steam_proton.steam_proton
+  #   remap:
+  #     CapsLock: Shift_L
+  #     LEFTCTRL: Tab
+  #     Shift_L: Control_L
+  #     Tab: CapsLock
 
 keymap:
   # - name: HPdir

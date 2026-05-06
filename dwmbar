@@ -6,7 +6,8 @@ while true; do
     # VOL=$(vol)
 	# BATT=$(cat /sys/class/power_supply/BAT0/capacity) 
 	# DATE=$(date +"%A, M%m %B %d, %Y %I:%M:%S %p") 
-	DATE=$(date +"%A, %I:%M:%S %p") 
+	# DATE=$(date +"%A, %d %I:%M:%S %p") 
+	DATE=$(date +"%A %d,   %I:%M %p  ") 
     # WEATHER=$(weather)
     # VIMSWAP=$(ls ~/.local/state/nvim/swap | wc -l)
 	#ROOT="$POWER $BATT $DATE" 

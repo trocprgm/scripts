@@ -40,6 +40,7 @@ alias sg="xclip -selection primary"
 alias gg="xclip -selection primary -o"
 alias sp="xclip -selection secondary"
 alias gp="xclip -selection secondary -o"
+# alias runclip="$(gc)"
 
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias open='xdg-open > /dev/null 2>&1 &'
@@ -83,9 +84,23 @@ alias powerstatus="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias lsoctal="stat -c \"%a %A %n\" *"
 # alias pwdf='realpath'
 
+runclip() {
+    if [ -z "$(gc)" ]; then
+        # echo "$PWD"
+        # clippy()
+        # xclip -s
+        $(clipmenu)
+    elif [ -n "$(gc)" ]; then
+        $(gc)
+    fi
+}
+
+
 pwd() {
     if [ -z "$1" ]; then
         echo "$PWD"
+        # echo "clipboard empty"
+        # clipmenu
     elif [ -n "$1" ]; then
         realpath "$1"
     fi
