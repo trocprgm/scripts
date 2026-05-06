@@ -18,11 +18,11 @@ export CM_LAUNCHER=dmenu
 export FILE_MANAGER=Nemo
 export DE_FILE_MANAGER=Nemo
 # FZF 
-export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
+# export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
 # export FZF_DEFAULT_OPTS=
 eval "$(fzf --bash)"
-export FZF_DEFAULT_COMMAND="fd -H --type f"
-export FZF_ALT_C_COMMAND="fd -H --type d && ls"
+export FZF_DEFAULT_COMMAND="fd -H -E .git --type f"
+# export FZF_ALT_C_COMMAND="fd -H -E .git --type d && ls"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 # fd --type f | fzf --preview 'cat {}'
@@ -106,14 +106,54 @@ pwd() {
     fi
 }
 
+
 fuzzy() {
   local dir
     if [ -z "$1" ]; then
-      dir=$(fd -H --type f . '/' | fzf) || return
+        dir=$(fd -H -E .git --type f . "$(pwd)" | fzf --preview 'bat -n --color=always --line-range :500 {}' ) || return
+      # echo "$dir"
+      realpath "$dir"
     elif [ -n "$1" ]; then
-      dir=$(fd -H --type f . "$1/" | fzf) || return
+      dir=$(fd -H -E .git --type f . "$1/" | fzf --preview 'bat -n --color=always --line-range :500 {}' ) || return
+      # echo "$dir"
+      realpath "$dir"
     fi
 }
+
+alias fuzzc="fuzzy "$1/" | xclip -selection c"
+
+duzzy() {
+  local dir
+    if [ -z "$1" ]; then
+        dir=$(fd -H -E .git --type d . "$(pwd)" | fzf --preview 'bat -n --color=always --line-range :500 {}' ) || return
+      # echo "$dir"
+      realpath "$dir"
+    elif [ -n "$1" ]; then
+      dir=$(fd -H -E .git --type d . "$1/" | fzf --preview 'bat -n --color=always --line-range :500 {}' ) || return
+      # echo "$dir"
+      realpath "$dir"
+    fi
+}
+duzzc() {
+  local dir
+    if [ -z "$1" ]; then
+        dir=$(fd -H -E .git --type d . "$(pwd)" | fzf --preview 'bat -n --color=always --line-range :500 {}' ) || return
+      # echo "$dir"
+      dir=$(realpath "$dir")
+      cd "$dir"
+      ls
+    elif [ -n "$1" ]; then
+      dir=$(fd -H -E .git --type d . "$1/" | fzf --preview 'bat -n --color=always --line-range :500 {}' ) || return
+      # echo "$dir"
+      dir=$(realpath "$dir")
+      cd "$dir"
+      ls
+      
+      # realpath "$dir"
+    fi
+}
+
+# alias duzzc="cd \$(duzzy) "
 
 trash() {
     mv "$1" "/home/rhom/Downstale/$1"

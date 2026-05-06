@@ -157,9 +157,11 @@ nnoremap <leader>fb <cmd>Buffers<cr>
 nnoremap <leader>tt <C-w>T
 nnoremap <leader>qq <cmd>:q<cr>
 nnoremap <leader>QQ <cmd>:q!<cr>
+
 nnoremap <leader>wq <cmd>:wq<cr>
-nnoremap <leader>wqq <cmd>:wqall<cr>
 nnoremap <leader>WQ <cmd>:wq!<cr>
+
+nnoremap <leader>wqq <cmd>:wqall<cr>
 nnoremap <leader>WQQ <cmd>:wqall!<cr>
     
 
