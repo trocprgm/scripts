@@ -4,8 +4,16 @@
 INPUT_CSV="/home/$USER/scripts/bookmarks.csv"
 OUTPUT_DIR="/home/$USER/scripts/chromium/"
 
+INPUT2_CSV="/home/$USER/scripts/systemmarks.csv"
+OUTPUT2_DIR="/home/$USER/scripts/sysalias/"
+
 # Read CSV line by line (skip empty or malformed lines)
+#
 rm /home/$USER/scripts/chromium/*
+
+echo "
+ = Chromium Bookmarks =
+"
 
 while IFS=',' read -r NAME URL; do
     # Skip headers or invalid lines
@@ -26,5 +34,38 @@ fi
 EOF
 
     chmod +x "$SCRIPT_PATH"
-    echo "Created: $SCRIPT_PATH"
+    echo "$SCRIPT_NAME | $URL"
 done < "$INPUT_CSV"
+
+echo "
+ = System Bookmarks =
+"
+
+rm /home/$USER/scripts/sysalias/*
+
+while IFS=',' read -r NAME URL; do
+    # Skip headers or invalid lines
+    [[ -z "$NAME" || -z "$URL" || "$NAME" == "name" ]] && continue
+
+    # Sanitize filename
+    SCRIPT_NAME="$(echo "$NAME" | tr -cd '[:alnum:]_-')"
+    SCRIPT_PATH="$OUTPUT2_DIR/$SCRIPT_NAME"
+
+    # Create the script file
+#     cat > "$SCRIPT_PATH" <<EOF
+# #!/bin/bash
+# if IsChrome; then
+#   chromium --new-tab "$URL"
+# else
+#   chromium --new-window "$URL"
+# fi
+#
+# EOF
+    cat > "$SCRIPT_PATH" <<EOF
+#!/bin/bash
+$URL
+EOF
+
+    chmod +x "$SCRIPT_PATH"
+    echo "$SCRIPT_NAME | $URL"
+done < "$INPUT2_CSV"

@@ -65,6 +65,7 @@ clipmenud &
 numlockx &
 megasync &
 nm-applet &
+pasystray &
 mullvad-vpn &
 # feh --bg-scale ~/.config/bg3.jpg &
 "$twm" 

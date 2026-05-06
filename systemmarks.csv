@@ -1,0 +1,8 @@
+filemngr, nemo
+bmenu, j4-dmenu-desktop --dmenu="(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | dmenu"
+calc, ./home/$USER/.local/share/applications/HPP--Flat50g--1763790021.570701.desktop
+kvm, chromium --app=http://10.42.0.69
+ftphone, curlftpfs 192.168.1.15:2221 /home/adman/FTP
+open, /usr/bin/xdg-open "$@" &
+inc, chromium --incognito
+termy, st tmux 

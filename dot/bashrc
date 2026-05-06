@@ -10,12 +10,12 @@ PS1='[\u@\h \W]\$ '
 CLIPTEMP="/home/rhom/Amy/.cliptemp"
 
 export EDITOR=nvim
-export TERMINAL=st
+export TERMINAL=st tmux
 export CM_LAUNCHER=dmenu
 # export FILE_MANAGER=thunar
 # export DE_FILE_MANAGER=thunar
 #.config/xdg-desktop-portal/portals.conf
-export FILE_MANAGER=thunar
+export FILE_MANAGER=Nemo
 export DE_FILE_MANAGER=Nemo
 # FZF 
 export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"

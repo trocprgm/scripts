@@ -3,18 +3,19 @@
 # ~/.bash_profile
 #
 export HISTFILE=/home/$USER/.bash_trash/.bash_history
-alias daviswifi="echo \"DowdilyAssisesJanglingTerminals\" | setclip"
 
 MEGA="/home/rhom/MEGA"
 
 #Navigation
 alias rt="cd / && ls"
+alias mnt="cd /run/media/rhom/ && lsblk --fs --perms && echo \"
+\" && ls -la"
 alias etc="cd /etc/ && ls"
 alias hm="cd ~ && ls -a"
 alias cfg="cd /home/rhom/scripts/dot/ && ls"
 alias prgm="cd /home/$USER/prgm/ && ls"
 alias scr="cd /home/$USER/scripts/ && ls"
-alias dot="cd /home/$USER/scripts/dot/ && ls"
+alias dot="cd /home/$USER/scripts/dot/ && ls -la"
 alias sck="cd /usr/src/ && ls"
 alias b="cd .. && ls"
 alias am="cd /home/$USER/Amy/ && ls"
@@ -44,6 +45,7 @@ export XDG_CONFIG_DIRS="$HOME/.config/xfce4/xfconf/:$HOME/.config/gtk-3.0/"
 export XDG_CONFIG_HOME="/home/rhom/.config/"
 export PATH="/home/rhom/scripts:$PATH"
 export PATH="/home/rhom/scripts/chromium:$PATH" 
+export PATH="/home/rhom/scripts/sysalias:$PATH" 
 export PATH="/home/rhom/scripts/screen:$PATH" 
 export PATH="/home/rhom/prgm/Appimage:$PATH"
 export PATH="/home/$USER/.screenlayout:$PATH"
@@ -55,6 +57,5 @@ export PATH="/home/$USER/.local/share/applications:$PATH"
 # alias bg="feh --bg-fill /home/$USER/.config/bg3.jpg"
 # alias bg="./.fehbg"
 
-alias map="chromium --new-window https://www.google.com/maps/"
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
