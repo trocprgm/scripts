@@ -1,0 +1,13 @@
+[Unit]
+Description=My App Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/rhom/scripts/screen/brutepaper
+; WorkingDirectory=/home/rhom/scripts/screen/
+; Restart=always
+User=rhom
+
+[Install]
+WantedBy=multi-user.target

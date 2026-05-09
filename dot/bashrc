@@ -10,7 +10,7 @@ PS1='[\u@\h \W]\$ '
 CLIPTEMP="/home/rhom/Amy/.cliptemp"
 
 export EDITOR=nvim
-export TERMINAL=st tmux
+export TERMINAL="st tmux"
 export CM_LAUNCHER=dmenu
 # export FILE_MANAGER=thunar
 # export DE_FILE_MANAGER=thunar
@@ -29,6 +29,7 @@ export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 # export FZF_DEFAULT_COMMAND=${FZF_ALT_C_COMMAND:-}"fd --type d"
 
 #System aliases
+alias mimelist="bat ~/.config/mimeapps.list"
 alias hellom="pwd && ls --color=auto"
 alias sc="xclip -selection c"
 alias gc="xclip -selection c -o"

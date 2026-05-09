@@ -1,8 +1,9 @@
 #!/bin/sh
 
 while true; do
-    # $(wallpaper)
-    feh --no-fehbg --bg-center --bg-fill /home/rhom/scripts/screen/bg2.png /home/rhom/scripts/screen/bg2.png &
+    $(/home/rhom/scripts/screen/wallpaper)
+    echo "bleh"
+    # feh --no-fehbg --bg-center --bg-fill /home/rhom/scripts/screen/bg2.png /home/rhom/scripts/screen/bg2.png &
     # POWER=$(curl -s http://192.168.1.75/rpc/Shelly.GetStatus | jq '.["pm1:0"] .apower')
     # VOL=$(vol)
 	# BATT=$(cat /sys/class/power_supply/BAT0/capacity) 

@@ -4,7 +4,7 @@
 INPUT_CSV="/home/$USER/scripts/bookmarks.csv"
 OUTPUT_DIR="/home/$USER/scripts/chromium/"
 
-INPUT2_CSV="/home/$USER/scripts/systemmarks.csv"
+INPUT2_CSV="/home/$USER/scripts/singles.csv"
 OUTPUT2_DIR="/home/$USER/scripts/sysalias/"
 
 # Read CSV line by line (skip empty or malformed lines)

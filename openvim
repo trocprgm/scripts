@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Usage: openvim.sh <file>
+
+FILE="$1"
+SESSION="editor"
+
+# Start tmux session if it doesn't exist
+if ! tmux has-session -t "$SESSION" 2>/dev/null; then
+    st -e tmux new-session -s "$SESSION" "nvim \"$FILE\""
+else
+    tmux new-window -t "$SESSION" -h "nvim \"$FILE\""
+    # tmux attach-session -t "$SESSION"
+    # tmux send-keys -t "$SESSION" ":e $FILE" Enter
+fi

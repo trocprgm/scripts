@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=template
+Comment=Run my custom script
+Exec=/home/rhom/scripts/jseofi
+Icon=$ICON_PATH
+Terminal=true
+Categories=Application;

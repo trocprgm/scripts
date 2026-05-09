@@ -23,6 +23,7 @@ alias ds="cd ~/Downstale/ && ls"
 alias tor="cd ~/Torrent/ && ls"
 alias 48="cd /home/rhom/.var/app/com.usebottles.bottles/data/bottles/bottles/Emu48/drive_c/ && ls"
 alias vimbak="cd ~/.local/share/nvim/ && ls"
+alias applications="cd /usr/share/applications && ls"
 
 
 # MEGA

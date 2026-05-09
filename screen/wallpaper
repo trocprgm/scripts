@@ -3,5 +3,6 @@
 # feh --bg-tile /home/rhom/scripts/screen/bg2.png &
 
 # feh --no-fehbg --bg-center --bg-fill /home/rhom/scripts/screen/planets.jpg /home/rhom/scripts/screen/planets.jpg &
-BATH="/home/rhom/scripts/screen/planets.jpg"
+# BATH="/home/rhom/scripts/screen/planets.jpg"
+BATH="/home/rhom/scripts/screen/bg2.png"
 feh --no-fehbg --bg-center --bg-fill $BATH $BATH
