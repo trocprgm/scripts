@@ -18,12 +18,12 @@ if [ -n "$FILENAME" ]; then
     exit 0
 fi
 
-FILENAME=$(find "$DIR" -maxdepth 1 -type f -iname "${INPUT}.wiki" | head -n 1)
+FILENAME=$(find "$DIR" -maxdepth 1 -type f -iname "${INPUT}.md" | head -n 1)
 if [ -n "$FILENAME" ]; then
     echo "File '$FILENAME' exists."
     bat --style=plain "$FILENAME"
 else
-    ls "$DIR" | sed 's/.wiki//g' | bat
-    # echo "File '$DIR/$1.wiki' does not exist (case-insensitive search)."
+    ls "$DIR" | sed 's/.md//g' | bat
+    # echo "File '$DIR/$1.md' does not exist (case-insensitive search)."
     exit 1
 fi

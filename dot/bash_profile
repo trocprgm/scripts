@@ -28,6 +28,7 @@ alias vimbak="cd ~/.local/share/nvim/ && ls"
 # MEGA
 alias tf="cd $MEGA/davis/thermofluid && ls"
 alias na="cd $MEGA/davis/numanalysis && ls"
+alias powersys="cd $MEGA/davis/powersystems && ls"
 alias mp="cd $MEGA/davis/manuproc && ls"
 alias pm="cd $MEGA/davis/propmat && ls"
 alias mg="cd $MEGA/ && ls"

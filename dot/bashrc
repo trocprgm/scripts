@@ -18,11 +18,11 @@ export CM_LAUNCHER=dmenu
 export FILE_MANAGER=Nemo
 export DE_FILE_MANAGER=Nemo
 # FZF 
-# export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
+export FZF_ALT_C_OPTS="--walker-skip .git,node_modules,.cache"
 # export FZF_DEFAULT_OPTS=
 eval "$(fzf --bash)"
 export FZF_DEFAULT_COMMAND="fd -H -E .git --type f"
-# export FZF_ALT_C_COMMAND="fd -H -E .git --type d && ls"
+export FZF_ALT_C_COMMAND="fd -H -E .git --type d && ls"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 # fd --type f | fzf --preview 'cat {}'
@@ -43,7 +43,8 @@ alias gp="xclip -selection secondary -o"
 # alias runclip="$(gc)"
 
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
-alias open='xdg-open > /dev/null 2>&1 &'
+# alias open="xdg-open > /dev/null 2>&1 &"
+# alias open="xdg-open > /dev/null 2>&1 &"
 alias lsperms="stat -c \"%a %A %n\" *"
 alias groupss="getent group"
 
