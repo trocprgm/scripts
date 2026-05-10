@@ -17,10 +17,12 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
+Plug 'junegunn/vim-easy-align'
 Plug 'chrisbra/Colorizer'
 Plug 'vimwiki/vimwiki'
 Plug 'chrisbra/Recover.vim'
 Plug 'christoomey/vim-tmux-navigator'
+
 
 "Plug 'williamboman/mason.nvim'
 "Plug 'williamboman/mason-lspconfig.nvim'
@@ -241,7 +243,8 @@ set backup                 " enable backup files
 set writebackup            " keep a backup while writing
 set backupdir=~/.local/share/nvim/backup
 set backupext=.bak         " use .bak extension
-set laststatus=1
+set laststatus=2
+set statusline=%f\ %m\ %y\ %=%l/%L\ %c
 set undofile
 " set undodir=~/.vim/undodir " Or your preferred directory for undo files
 set undodir=~/.local/share/nvim/undo

@@ -1,2 +1,0 @@
-#!/bin/bash
- st tmux new-session -s Bruh 'nvim; $SHELL'

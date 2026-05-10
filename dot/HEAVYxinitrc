@@ -5,7 +5,7 @@ exec_prefix="${prefix}"
 xrdb="xrdb"
 xinitdir="/etc/X11/xinit"
 xclock="xclock"
-xterm="st tmux"
+xterm="st"
 twm="dwm"
 xmodmap="xmodmap"
 
@@ -51,7 +51,7 @@ fi
 
 # ./.screenlayout/default.sh &
 # ./.default.sh &
-# ./scripts/screen/hd $
+./scripts/screen/hd $
 # feh --bg-fill /home/$USER/.config/bg3.jpg &
 ./scripts/dwmbar &
 ./scripts/screen/brutepaper &
@@ -59,10 +59,10 @@ fi
 # ./.fehbg &
 # setxkbmap -option 'caps:ctrl_modifier' &
 # xremap --watch /home/$USER/.xremap.yml &
-# xremap --watch ~/scripts/dot/xremap.yml &
-# echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save &
+xremap --watch ~/scripts/dot/xremap.yml &
+echo 0 | sudo tee /sys/module/snd_hda_intel/parameters/power_save &
 clipmenud &
-# numlockx &
+numlockx &
 picom -b&
 megasync &
 nm-applet &

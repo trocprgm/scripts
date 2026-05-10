@@ -1,0 +1,10 @@
+#!/bin/bash
+
+chromium --new-window file:///home/rhom/MEGA/vimwiki/public_html/diary/diary.html#
+sleep 0.4
+xdotool search --name "diary - Chromium" set_window --class "cratchy"
+sleep 0.4
+xdotool search --name "diary - Chromium" set_window --class "cratchy"
+sleep 0.4
+xdotool search --name "diary - Chromium" set_window --class "cratchy"
+

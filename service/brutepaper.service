@@ -5,9 +5,10 @@ After=network.target
 [Service]
 Type=simple
 ExecStart=/home/rhom/scripts/screen/brutepaper
-; WorkingDirectory=/home/rhom/scripts/screen/
-; Restart=always
+WorkingDirectory=/home/rhom/
+Restart=always
 User=rhom
+Group=wheel
 
 [Install]
 WantedBy=multi-user.target

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Usage: openvim.sh <file>
+
+FILE="$1"
+
+# Get most recently used tmux session
+SESSION=$(tmux list-sessions -F '#{session_activity} #{session_name}' \
+    2>/dev/null | sort -nr | head -n1 | awk '{print $2}')
+
+# If no session exists, create one
+# if [ -z "$SESSION" ]; then
+#     SESSION="main"
+#     st -e tmux new-session -s "$SESSION" "nvim \"$FILE\""
+#     exit
+# fi
+
+# Create unlimited new windows
+tmux new-window -b -t "$SESSION:0" -n "$(basename "$FILE")" "nvim \"$FILE\""
+
+# Open st attached to session
+# st -e tmux attach-session -t "$SESSION"

@@ -9,7 +9,7 @@ SESSION="editor"
 if ! tmux has-session -t "$SESSION" 2>/dev/null; then
     st -e tmux new-session -s "$SESSION" "nvim \"$FILE\""
 else
-    tmux new-window -t "$SESSION" -h "nvim \"$FILE\""
+    tmux new-window -b -t "$SESSION" -n "$(basename "$FILE")" "nvim \"$FILE\""
     # tmux attach-session -t "$SESSION"
     # tmux send-keys -t "$SESSION" ":e $FILE" Enter
 fi
